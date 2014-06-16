@@ -1,0 +1,29 @@
+<?php
+// work with get or post
+$request = array_merge($_GET, $_POST);
+
+// check that request is inbound message
+if(!isset($request['to']) OR !isset($request['msisdn']) OR !isset($request['text'])){
+    error_log('not inbound message');
+    return;
+}
+
+error_log('got inbound message');
+
+$text = str_rot13($request['text']);
+
+error_log('creating reply');
+
+$url = 'https://rest.nexmo.com/sms/json?' . http_build_query([
+        'api_key' => NEXMO_KEY,
+        'api_secret' => NEXMO_SECRET,
+        'to' => $request['msisdn'],
+        'from' => $request['to'],
+        'text' => $text
+    ]);
+
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$response = curl_exec($ch);
+error_log('sent');
+error_log($response);
