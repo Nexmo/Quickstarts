@@ -36,4 +36,3 @@ If the status is `0`, check your phone. You've just sent your first SMS message 
 Check out the API documentation for more on sending SMS messages.
 
 Having trouble? Take a look at our outbound SMS troubleshooting guide.
-
