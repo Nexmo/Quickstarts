@@ -5,7 +5,7 @@
 Receiving an inbound SMS messages is as easy as processing an HTML form. 
 
 All inbound SMS messages result in a callback to the URL assigned to your virtual number. You can set and update this
-URL in the [`numbers section of the dashboard`](https://dashboard.nexmo.com/private/numbers).
+URL in the [numbers section of the dashboard](https://dashboard.nexmo.com/private/numbers).
 
 The HTTP method - `GET` or `POST` - can be configured from the 'Api Settings' dropdown in the top right of the 
 dashboard. Once you follow the edit link, you can set the HTTP method, a delivery status callback, as well as a default 
