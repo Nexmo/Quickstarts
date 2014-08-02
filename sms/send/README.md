@@ -1,6 +1,6 @@
 # Quickstart: Sending Your First SMS
 
-[Video](https://vimeo.com/nexmo/review/98321044/2fe80145c8)
+[Video](https://vimeo.com/98321044)
 
 Sending your first SMS with Nexmo is as easy as making an HTTP request.
 
@@ -18,7 +18,8 @@ You'll need to send your `api_key` as well your `api_secret`, and for a simple S
 of the message. 
 
 Make sure the `to` is in international format. If you're in the US or Canada, the `from` will have to be an inbound 
-number that's part of your account. Carrier and country specific restrictions on the sender id (the `from`) can be found in our FAQ.
+number that's part of your account. Carrier and country specific restrictions on the sender id (the `from`) can be 
+[found in our FAQ][1].
 
 New accounts can only send to numbers that have been verified in the dashboard, and 'Nexmo Demo' will be added to all 
 messages. Once you've added funds to your account, those restrictions will be removed.
@@ -33,6 +34,7 @@ response.
 
 If the status is `0`, check your phone. You've just sent your first SMS message using Nexmo.
 
-Check out the API documentation for more on sending SMS messages.
+Check out the [API documentation][2] for more on sending SMS messages.
 
-Having trouble? Take a look at our outbound SMS troubleshooting guide.
+[1]: https://help.nexmo.com/categories/20079687-Country-Specifics
+[2]: https://docs.nexmo.com/index.php/sms-api/send-message

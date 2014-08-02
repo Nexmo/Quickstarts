@@ -12,4 +12,3 @@ $url = 'https://rest.nexmo.com/tts/json?' . http_build_query($params);
 $ch = curl_init($url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $response = curl_exec($ch);
-error_log($response);

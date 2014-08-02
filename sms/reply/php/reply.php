@@ -8,11 +8,7 @@ if(!isset($request['to']) OR !isset($request['msisdn']) OR !isset($request['text
     return;
 }
 
-error_log('got inbound message');
-
 $text = str_rot13($request['text']);
-
-error_log('creating reply');
 
 $url = 'https://rest.nexmo.com/sms/json?' . http_build_query([
         'api_key' => NEXMO_KEY,
@@ -25,5 +21,3 @@ $url = 'https://rest.nexmo.com/sms/json?' . http_build_query([
 $ch = curl_init($url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $response = curl_exec($ch);
-error_log('sent');
-error_log($response);

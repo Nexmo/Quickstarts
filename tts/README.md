@@ -1,6 +1,6 @@
 # Quickstart: Delivering Messages with Voice
 
-[Video](http://vimeo.com/nexmo/review/99601185/7eb94a32f0)
+[Video](https://vimeo.com/99601185)
 
 When sending an SMS isn't the optimal solution, sending a voice message is just as easy with our Text To Speech API. 
 
@@ -30,8 +30,6 @@ Finally, you're not limited to text to speech, passing a link to an audio file w
 messages.
 
 Check out the API documentation for more on the [TTS API][1] and how to [control the speech engine][2].
-
-Having trouble? Head over to our TTS troubleshooting guide.
 
 [1]: https://docs.nexmo.com/index.php/voice-api/text-to-speech
 [2]: https://docs.nexmo.com/index.php/voice-api/text-to-speech#tts_tips
