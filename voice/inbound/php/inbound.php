@@ -8,7 +8,7 @@ echo '<?xml version="1.0" encoding="UTF-8"?>';
 <vxml version="2.1">
     <form>
         <block>
-            <prompt>SHello from VXML!</prompt>
+            <prompt>Hello from VXML!</prompt>
         </block>
     </form>
 </vxml>
