@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version = "2.1">
+    <form>
+        <field name="department">
+            <prompt>Press 1 or say sales, press 2 or say support.</prompt>
+            <grammar xml:lang="en-US" root = "TOPLEVEL" mode="voice" >
+                <rule id="TOPLEVEL" scope="public">
+                    <one-of>
+                        <item> sales </item>
+                        <item> support </item>
+                    </one-of>
+                </rule>
+            </grammar>
+            <grammar xml:lang="en-US" root = "TOPLEVEL" mode="dtmf" >
+                <rule id="TOPLEVEL" scope="public">
+                    <one-of>
+                        <item> 1 <tag> out.department="sales"; </tag> </item>
+                        <item> 2 <tag> out.department="support"; </tag> </item>
+                    </one-of>
+                </rule>
+            </grammar>
+        </field>
+        <block>
+            <submit next="form.php" method="post"/>
+        </block>
+    </form>
+</vxml>
