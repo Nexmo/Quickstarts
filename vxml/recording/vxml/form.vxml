@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version = "2.1">
+    <form>
+        <record name="message" beep="true" maxtime="60s">
+            <prompt>Please leave your message after the beep, then press any key.</prompt>
+        </record>
+        <block>
+            <prompt>Here's what you recorded <value expr="message"/>.</prompt>
+        </block>
+        <block>
+            <submit next="../php/form.php" enctype="multipart/form-data" method="post"/>
+        </block>
+    </form>
+</vxml>
