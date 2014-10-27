@@ -74,5 +74,9 @@ defined URL. That data can be evaluated and used to generate the next VoiceXML d
 
 Example: [PHP](./php/form.php)
 
-Want to dig a little deeper into VoiceXML? Check out the W3C's documentation of [`<form>`], [`<field>`], and 
-[`<submit>`]. 
+Want to dig a little deeper into VoiceXML? Check out the W3C's documentation of [`<form>`][form], [`<field>`][field], 
+and [`<submit>`][submit].
+
+[form]: http://www.w3.org/TR/voicexml20/#dml2.1
+[field]: http://www.w3.org/TR/voicexml20/#dml2.3.1
+[submit]: http://www.w3.org/TR/voicexml20/#dml5.3.8
