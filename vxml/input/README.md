@@ -12,13 +12,12 @@ inside of a simple `<block>` element so it is executed automatically.
     <vxml version = "2.1">
         <form>
             <block>
-                <submit next="form.php" method="post"/>
+                <submit next="../php/form.php" method="post"/>
             </block>
         </form>
     </vxml>
 
 [*View in Context*](./vxml/form.vxml#L23-L25)
-
 
 Each `<field>` has a `name` attribute which defines how that field is accessed in the VoiceXML, and what name is used
 when the data is submitted to a URL.

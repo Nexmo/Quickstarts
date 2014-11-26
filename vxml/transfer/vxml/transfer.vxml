@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version = "2.1">
+    <form>
+        <transfer name="result" dest="tel:+14158058810" bridge="true">
+            <prompt>Please wait while we transfer you.</prompt>
+            <grammar xml:lang="en-US" root = "TOPLEVEL" mode="voice">
+                <rule id="TOPLEVEL" scope="public">
+                    <one-of>
+                        <item> disconnect </item>
+                    </one-of>
+                </rule>
+            </grammar>
+        </transfer>
+        <filled>
+            <if cond="result == 'busy'">
+                <prompt>Sorry, they're busy.</prompt>
+            <elseif cond="result == 'noanswer'" />
+                <prompt>Sorry, they didn't answer.</prompt>
+            <else />
+                <prompt>You spoke for <value expr="result$.duration" /> seconds.</prompt>
+            </if>
+
+            <if cond="result$.inputmode == 'voice'">
+                You ended the call by saying, <value expr="result$.utterance" />.
+            </if>
+        </filled>
+        <block>
+            Thanks for using the transfer element.
+        </block>
+    </form>
+</vxml>

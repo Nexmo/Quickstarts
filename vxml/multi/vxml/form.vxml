@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version = "2.1">
+    <form id="welcome">
+        <field name="customer_type">
+            <prompt>Say 'new' or press 1 if you're a new  customer, press 2 or say 'existing' if you have an account.</prompt>
+            <grammar xml:lang="en-US" root = "TOPLEVEL" mode="voice" >
+                <rule id="TOPLEVEL" scope="public">
+                    <one-of>
+                        <item> new </item>
+                        <item> existing </item>
+                    </one-of>
+                </rule>
+            </grammar>
+            <grammar xml:lang="en-US" root = "TOPLEVEL" mode="dtmf" >
+                <rule id="TOPLEVEL" scope="public">
+                    <one-of>
+                        <item> 1 <tag> out.customer_type="new"; </tag> </item>
+                        <item> 2 <tag> out.customer_type="existing"; </tag> </item>
+                    </one-of>
+                </rule>
+            </grammar>
+        </field>
+        <filled>
+            <prompt cond="customer_type=='new'">
+                Thanks for contacting us.
+            </prompt>
+            <prompt cond="customer_type=='existing'">
+                Thanks for being a loyal customer.
+            </prompt>
+            <goto expr="'#' + customer_type" />
+        </filled>
+    </form>
+    <form id="new">
+        <transfer name="sales" dest="tel:+14158058810" bridge="true">
+            <prompt>I'll connect you to sales.</prompt>
+            <filled>
+                <submit next="../php/form.php" method="post"/>
+            </filled>
+        </transfer>
+    </form>
+    <form id="existing">
+        <field name="menu">
+            <prompt>Press 1 or say 'support' to be connected, press 2 or say 'review' to leave a customer testimonial.</prompt>
+            <grammar xml:lang="en-US" root = "TOPLEVEL" mode="voice" >
+                <rule id="TOPLEVEL" scope="public">
+                    <one-of>
+                        <item> support </item>
+                        <item> review </item>
+                    </one-of>
+                </rule>
+            </grammar>
+            <grammar xml:lang="en-US" root = "TOPLEVEL" mode="dtmf" >
+                <rule id="TOPLEVEL" scope="public">
+                    <one-of>
+                        <item> 1 <tag> out.menu="support"; </tag> </item>
+                        <item> 2 <tag> out.menu="review"; </tag> </item>
+                    </one-of>
+                </rule>
+            </grammar>
+            <filled>
+                <goto expritem="menu" />
+            </filled>
+        </field>
+        <transfer name="support" dest="tel:+4402035141909" bridge="true" expr="false">
+            <prompt>Connecting you to support.</prompt>
+        </transfer>
+        <record name="review" beep="true" expr="false">
+            <prompt>Glad you want to leave a review, tell us what you think after the beep.</prompt>
+            <filled>
+                <prompt>Thanks, your review has been saved!</prompt>
+            </filled>
+        </record>
+        <filled>
+            <submit next="../php/form.php" enctype="multipart/form-data" method="post"/>
+        </filled>
+    </form>
+</vxml>

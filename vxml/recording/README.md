@@ -54,7 +54,7 @@ side script to save the recording.
 Example: [PHP](./php/form.php)
 
 Want to dig a little deeper into VoiceXML? Check out the W3C's documentation of [`<form>`][form], [`<record>`][record], 
-and[`<value>`][value]. 
+and [`<value>`][value]. 
 
 [input]: ../input
 [form]: http://www.w3.org/TR/voicexml20/#dml2.1

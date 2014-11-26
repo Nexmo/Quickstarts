@@ -21,7 +21,7 @@
             </grammar>
         </field>
         <block>
-            <submit next="form.php" method="post"/>
+            <submit next="../php/form.php" method="post"/>
         </block>
     </form>
 </vxml>

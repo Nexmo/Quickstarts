@@ -8,7 +8,7 @@
             <prompt>Here's what you recorded <value expr="message"/>.</prompt>
         </block>
         <block>
-            <submit next="form.php" enctype="multipart/form-data" method="post"/>
+            <submit next="./../form.php" enctype="multipart/form-data" method="post"/>
         </block>
     </form>
 </vxml>

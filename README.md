@@ -18,3 +18,6 @@
 ## VXML
 
 - [Prompting for Input](./vxml/input)
+- [Recording Audio](./vxml/recording)
+- [Transferring a Call](./vxml/transfer)
+- [Multiple Items and Forms](./vxml/multi)
