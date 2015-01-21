@@ -7,10 +7,10 @@
 <title>Sending Your First SMS</title>
 
 <!-- CSS -->
-<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/Quickstarts/css/bootstrap.min.css">
 <link rel="stylesheet" id="lato-css" href="//fonts.googleapis.com/css?family=Lato%3A100%2C300%2C400%2C700%2C900%2C100italic%2C300italic%2C400italic%2C700italic%2C900italic&amp;ver=4.1" type="text/css" media="all">
-<link rel="stylesheet" type="text/css" href="/css/nexmo.css">
-<link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="/Quickstarts/css/nexmo.css">
+<link rel="stylesheet" type="text/css" href="/Quickstarts/css/font-awesome.min.css">
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
 </head>
 
@@ -19,14 +19,14 @@
 <header>
   <div class="container-fluid header-meta">
     <h1 class="hide">Nexmo</h1>
-    <a href="index.html"><img src="/img/logo.png" alt="Nexmo.com" width="168" height="31" class="logo"></a>
+    <a href="index.html"><img src="/Quickstarts/img/logo.png" alt="Nexmo.com" width="168" height="31" class="logo"></a>
     <div class="navbar navbar-default">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
       </div>
       <nav id="navbar-collapse" class="pull-right collapse navbar-collapse">
         <ul class="nav navbar-nav">
-          <li><a href="/">Quickstarts</a></li>
+          <li><a href="/Quickstarts/">Quickstarts</a></li>
           <li><a href="https://nexmo.com">Nexmo.com</a></li>
         </ul>
       </nav>
@@ -53,27 +53,27 @@
           <div class="side-menu SMS">
             <h4>SMS</h4>
             <ul class="list-unstyled">
-              <li ><a href="/./sms/send/">Sending Your First SMS</a> <span>»</span></li>
-              <li class="current"><a href="/./sms/receive/">Receiving Your First SMS</a> <span>»</span></li>
-              <li ><a href="/./sms/reply/">Replying to SMS Messages</a> <span>»</span></li>
+              <li ><a href="/Quickstarts/./sms/send/">Sending Your First SMS</a> <span>»</span></li>
+              <li class="current"><a href="/Quickstarts/./sms/receive/">Receiving Your First SMS</a> <span>»</span></li>
+              <li ><a href="/Quickstarts/./sms/reply/">Replying to SMS Messages</a> <span>»</span></li>
             </ul>
           </div>
           <div class="side-menu Voice">
             <h4>Voice</h4>
             <ul class="list-unstyled">
-              <li ><a href="/./tts/">Delivering Messages with Voice</a> <span>»</span></li>
-              <li ><a href="/./voice/inbound/">Receiving Your First Call</a> <span>»</span></li>
-              <li ><a href="/./voice/outbound/">Making An Outbound Call</a> <span>»</span></li>
+              <li ><a href="/Quickstarts/./tts/">Delivering Messages with Voice</a> <span>»</span></li>
+              <li ><a href="/Quickstarts/./voice/inbound/">Receiving Your First Call</a> <span>»</span></li>
+              <li ><a href="/Quickstarts/./voice/outbound/">Making An Outbound Call</a> <span>»</span></li>
             </ul>
           </div>
           <div class="side-menu VXML">
             <h4>VXML</h4>
             <ul class="list-unstyled">
-              <li ><a href="/./vxml/input/">Prompting for Input</a> <span>»</span></li>
-              <li ><a href="/./vxml/recording/">Recording Audio</a> <span>»</span></li>
-              <li ><a href="/./vxml/transfer/">Transferring a Call</a> <span>»</span></li>
-              <li ><a href="/./vxml/multi/">Multiple Items and Forms</a> <span>»</span></li>
-              <li ><a href="/./vxml/errors/">Error Events</a> <span>»</span></li>
+              <li ><a href="/Quickstarts/./vxml/input/">Prompting for Input</a> <span>»</span></li>
+              <li ><a href="/Quickstarts/./vxml/recording/">Recording Audio</a> <span>»</span></li>
+              <li ><a href="/Quickstarts/./vxml/transfer/">Transferring a Call</a> <span>»</span></li>
+              <li ><a href="/Quickstarts/./vxml/multi/">Multiple Items and Forms</a> <span>»</span></li>
+              <li ><a href="/Quickstarts/./vxml/errors/">Error Events</a> <span>»</span></li>
             </ul>
           </div>
         </div>
@@ -105,10 +105,10 @@ string, or be in the post body, depending on the HTTP method you selected.</p>
 will be the sender's number.</p>
 <div class="code-snippets">
     <ul class="nav nav-tabs">
-                <li role="presentation" class="PHP54c011799039e active"><a href="#PHP54c011799039e" aria-controls="PHP54c011799039e" role="tab" data-toggle="tab">PHP</a></li>
+                <li role="presentation" class="PHP54c0164dcbca6 active"><a href="#PHP54c0164dcbca6" aria-controls="PHP54c0164dcbca6" role="tab" data-toggle="tab">PHP</a></li>
             </ul>
     <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="PHP54c011799039e">
+                <div role="tabpanel" class="tab-pane active" id="PHP54c0164dcbca6">
             <pre><code>&lt;?php
 // work with get or post
 $request = array_merge($_GET, $_POST);
@@ -131,7 +131,7 @@ error_log('inbound message body: ' . $request['text']);
         </div>
         <div class="row next">
           <div class="col-md-12">
-            <a href="/./sms/reply/" class="btn"><span>Next</span>: Replying to SMS Messages <span class="glyphicon glyphicon-play"></span></a>
+            <a href="/Quickstarts/./sms/reply/" class="btn"><span>Next</span>: Replying to SMS Messages <span class="glyphicon glyphicon-play"></span></a>
           </div>
         </div>
       </section>
@@ -205,9 +205,9 @@ error_log('inbound message body: ' . $request['text']);
 </body>
 
 <!-- JS -->
-<script src="/js/jquery-1.11.2.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/nexmo.js"></script>
+<script src="/Quickstarts/js/jquery-1.11.2.min.js"></script>
+<script src="/Quickstarts/js/bootstrap.min.js"></script>
+<script src="/Quickstarts/js/nexmo.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 <script>
