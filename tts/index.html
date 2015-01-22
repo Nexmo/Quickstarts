@@ -88,7 +88,7 @@
           <div class="col-md-12">
             <button type="button" class="btn">Watch Screencast <span class="glyphicon glyphicon-play"></span></button>
 
-            <iframe id="screencast" class="vimeo-video hide" src="//player.vimeo.com/video/99601185?api=1&title=0&amp;byline=0&amp;portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            <iframe id="screencast" class="vimeo-video hide" src="//player.vimeo.com/video/99601185?api=1&player_id=screencast&title=0&amp;byline=0&amp;portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
           </div>
         </div>
         <div class="row">
@@ -97,11 +97,11 @@
 API URL to <code>tts</code>. The <code>to</code>, <code>from</code>, and <code>text</code> parameters stay the same.</p>
 <div class="code-snippets">
     <ul class="nav nav-tabs">
-                <li role="presentation" class="cURL54c0164e16efd active"><a href="#cURL54c0164e16efd" aria-controls="cURL54c0164e16efd" role="tab" data-toggle="tab">cURL</a></li>
-                <li role="presentation" class="PHP54c0164e16efd"><a href="#PHP54c0164e16efd" aria-controls="PHP54c0164e16efd" role="tab" data-toggle="tab">PHP</a></li>
+                <li role="presentation" class="cURL54c05fd949e84 active"><a href="#cURL54c05fd949e84" aria-controls="cURL54c05fd949e84" role="tab" data-toggle="tab">cURL</a></li>
+                <li role="presentation" class="PHP54c05fd949e84"><a href="#PHP54c05fd949e84" aria-controls="PHP54c05fd949e84" role="tab" data-toggle="tab">PHP</a></li>
             </ul>
     <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="cURL54c0164e16efd">
+                <div role="tabpanel" class="tab-pane active" id="cURL54c05fd949e84">
             <pre><code>#!/bin/bash
 curl 'https://rest.nexmo.com/tts/json' \
 -d api_key=NEXMO_KEY \
@@ -111,7 +111,7 @@ curl 'https://rest.nexmo.com/tts/json' \
 -d from=NEXMO_NUMBER
 </code></pre>
         </div>
-                <div role="tabpanel" class="tab-pane " id="PHP54c0164e16efd">
+                <div role="tabpanel" class="tab-pane " id="PHP54c05fd949e84">
             <pre><code>&lt;?php
 $params = [
     'api_key' =&gt; NEXMO_KEY,
@@ -173,7 +173,7 @@ messages.</p>
       <div class="col-md-4">
         <ul class="nav">
           <li><a href="https://www.nexmo.com/blog">Blog</a></li>
-          <li><a href="https://www.nexmo.com/resources/webinars/">Webminars</a></li>
+          <li><a href="https://www.nexmo.com/resources/webinars/">Webinars</a></li>
           <li><a href="https://labs.nexmo.com/">Labs</a></li>
         </ul>
       </div>
@@ -225,6 +225,7 @@ messages.</p>
 <script src="/Quickstarts/js/bootstrap.min.js"></script>
 <script src="/Quickstarts/js/nexmo.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script src="//f.vimeocdn.com/js/froogaloop2.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -243,10 +244,30 @@ messages.</p>
      });
   }
 
+  var getVimeoCallback = function(event){
+    var sent = false;
+    return function(id){
+      if(!sent){
+        var player = $f(id);
+        sent = true;
+        player.api('getVideoUrl', function(url){
+          ga('send', 'event', 'video', event, url);
+        });
+      }
+    }
+  };
+
   $(function(){
     $('a.external-link').click(function(){
       trackOutboundLink($(this).attr('href'));
       return false;
+    });
+
+    var frame = $("#screencast")[0];
+    $f(frame).addEvent('ready', function(id){
+      var player = $f(id);
+      player.addEvent('play', getVimeoCallback('play'));
+      player.addEvent('finish', getVimeoCallback('finish'));
     });
   });
 

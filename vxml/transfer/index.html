@@ -133,10 +133,10 @@ reference the specific variable. Instead of using prompts to notify the user of 
 be used to send that data to a server for logging.</p>
 <div class="code-snippets">
     <ul class="nav nav-tabs">
-                <li role="presentation" class="Full VXML54c0164f10813 active"><a href="#Full VXML54c0164f10813" aria-controls="Full VXML54c0164f10813" role="tab" data-toggle="tab">Full VXML</a></li>
+                <li role="presentation" class="Full VXML54c05fda3d862 active"><a href="#Full VXML54c05fda3d862" aria-controls="Full VXML54c05fda3d862" role="tab" data-toggle="tab">Full VXML</a></li>
             </ul>
     <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="Full VXML54c0164f10813">
+                <div role="tabpanel" class="tab-pane active" id="Full VXML54c05fda3d862">
             <pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;vxml version = &quot;2.1&quot;&gt;
     &lt;form&gt;
@@ -203,7 +203,7 @@ be used to send that data to a server for logging.</p>
       <div class="col-md-4">
         <ul class="nav">
           <li><a href="https://www.nexmo.com/blog">Blog</a></li>
-          <li><a href="https://www.nexmo.com/resources/webinars/">Webminars</a></li>
+          <li><a href="https://www.nexmo.com/resources/webinars/">Webinars</a></li>
           <li><a href="https://labs.nexmo.com/">Labs</a></li>
         </ul>
       </div>
@@ -255,6 +255,7 @@ be used to send that data to a server for logging.</p>
 <script src="/Quickstarts/js/bootstrap.min.js"></script>
 <script src="/Quickstarts/js/nexmo.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script src="//f.vimeocdn.com/js/froogaloop2.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -273,10 +274,30 @@ be used to send that data to a server for logging.</p>
      });
   }
 
+  var getVimeoCallback = function(event){
+    var sent = false;
+    return function(id){
+      if(!sent){
+        var player = $f(id);
+        sent = true;
+        player.api('getVideoUrl', function(url){
+          ga('send', 'event', 'video', event, url);
+        });
+      }
+    }
+  };
+
   $(function(){
     $('a.external-link').click(function(){
       trackOutboundLink($(this).attr('href'));
       return false;
+    });
+
+    var frame = $("#screencast")[0];
+    $f(frame).addEvent('ready', function(id){
+      var player = $f(id);
+      player.addEvent('play', getVimeoCallback('play'));
+      player.addEvent('finish', getVimeoCallback('finish'));
     });
   });
 

@@ -88,7 +88,7 @@
           <div class="col-md-12">
             <button type="button" class="btn">Watch Screencast <span class="glyphicon glyphicon-play"></span></button>
 
-            <iframe id="screencast" class="vimeo-video hide" src="//player.vimeo.com/video/102380947?api=1&title=0&amp;byline=0&amp;portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            <iframe id="screencast" class="vimeo-video hide" src="//player.vimeo.com/video/102380947?api=1&player_id=screencast&title=0&amp;byline=0&amp;portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
           </div>
         </div>
         <div class="row">
@@ -103,11 +103,11 @@ data. But unlike SMS requests, Nexmo expects the response to contain a valid Voi
 <p>Voice XML (VXML) is to a phone what HTML is to a browser.</p>
 <div class="code-snippets">
     <ul class="nav nav-tabs">
-                <li role="presentation" class="VXML54c0164e3f211 active"><a href="#VXML54c0164e3f211" aria-controls="VXML54c0164e3f211" role="tab" data-toggle="tab">VXML</a></li>
-                <li role="presentation" class="PHP54c0164e3f211"><a href="#PHP54c0164e3f211" aria-controls="PHP54c0164e3f211" role="tab" data-toggle="tab">PHP</a></li>
+                <li role="presentation" class="VXML54c05fd96ef92 active"><a href="#VXML54c05fd96ef92" aria-controls="VXML54c05fd96ef92" role="tab" data-toggle="tab">VXML</a></li>
+                <li role="presentation" class="PHP54c05fd96ef92"><a href="#PHP54c05fd96ef92" aria-controls="PHP54c05fd96ef92" role="tab" data-toggle="tab">PHP</a></li>
             </ul>
     <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="VXML54c0164e3f211">
+                <div role="tabpanel" class="tab-pane active" id="VXML54c05fd96ef92">
             <pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;vxml version=&quot;2.1&quot;&gt;
     &lt;form&gt;
@@ -117,7 +117,7 @@ data. But unlike SMS requests, Nexmo expects the response to contain a valid Voi
     &lt;/form&gt;
 &lt;/vxml&gt;</code></pre>
         </div>
-                <div role="tabpanel" class="tab-pane " id="PHP54c0164e3f211">
+                <div role="tabpanel" class="tab-pane " id="PHP54c05fd96ef92">
             <pre><code>&lt;?php
 // accept both query string and post
 $request = array_merge($_GET, $_POST);
@@ -171,7 +171,7 @@ list of parameters and status responses in the <a href="https://docs.nexmo.com/i
       <div class="col-md-4">
         <ul class="nav">
           <li><a href="https://www.nexmo.com/blog">Blog</a></li>
-          <li><a href="https://www.nexmo.com/resources/webinars/">Webminars</a></li>
+          <li><a href="https://www.nexmo.com/resources/webinars/">Webinars</a></li>
           <li><a href="https://labs.nexmo.com/">Labs</a></li>
         </ul>
       </div>
@@ -223,6 +223,7 @@ list of parameters and status responses in the <a href="https://docs.nexmo.com/i
 <script src="/Quickstarts/js/bootstrap.min.js"></script>
 <script src="/Quickstarts/js/nexmo.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script src="//f.vimeocdn.com/js/froogaloop2.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -241,10 +242,30 @@ list of parameters and status responses in the <a href="https://docs.nexmo.com/i
      });
   }
 
+  var getVimeoCallback = function(event){
+    var sent = false;
+    return function(id){
+      if(!sent){
+        var player = $f(id);
+        sent = true;
+        player.api('getVideoUrl', function(url){
+          ga('send', 'event', 'video', event, url);
+        });
+      }
+    }
+  };
+
   $(function(){
     $('a.external-link').click(function(){
       trackOutboundLink($(this).attr('href'));
       return false;
+    });
+
+    var frame = $("#screencast")[0];
+    $f(frame).addEvent('ready', function(id){
+      var player = $f(id);
+      player.addEvent('play', getVimeoCallback('play'));
+      player.addEvent('finish', getVimeoCallback('finish'));
     });
   });
 
