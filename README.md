@@ -14,7 +14,7 @@
 - [Receiving Your First Call](./voice/inbound)
 - [Making An Outbound Call](./voice/outbound)
 
-## VXML
+## VoiceXML
 
 - [Prompting for Input](./vxml/input)
 - [Recording Audio](./vxml/recording)
