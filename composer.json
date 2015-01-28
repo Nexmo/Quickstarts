@@ -1,0 +1,27 @@
+{
+  "description": "Quickstart Source / Static Builder",
+  "minimum-stability": "stable",
+  "authors": [
+    {
+      "name": "Tim Lytle",
+      "email": "tim@nexmo.com"
+    }
+  ],
+  "require": {
+    "league/commonmark": "dev-bugfix-html-contents as 0.5",
+    "mustache/mustache": "~2.7",
+    "aura/cli": "2.0.3"
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "dev-master"
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/tjlytle/commonmark"
+    }
+  ],
+  "autoload": {
+    "psr-0": { "": "_src/" }
+  }
+}

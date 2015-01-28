@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+{{> head }}
+<body>
+{{> header}}
+<!-- ********************************* Container ******************************************* -->
+<section class="body-container">
+  <div class="container">
+    {{> aside }}
+<!-- ********************************* Body ******************************************* -->
+    <div class="col-md-9">
+      <section class="body-content">
+        {{# video }}
+        <div class="row watch-screencast">
+          <div class="col-md-12">
+            <button type="button" class="btn">Watch Screencast <span class="glyphicon glyphicon-play"></span></button>
+
+            <iframe id="screencast" class="vimeo-video hide" src="//player.vimeo.com/video/{{video}}?api=1&player_id=screencast&title=0&amp;byline=0&amp;portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+          </div>
+        </div>
+        {{/ video }}
+        <div class="row">
+          <div class="col-md-12">{{{content}}}</div>
+        </div>
+        {{# next }}
+        <div class="row next">
+          <div class="col-md-12">
+            <a href="/{{webpath}}/{{path}}/" class="btn"><span>Next</span>: {{label}} <span class="glyphicon glyphicon-play"></span></a>
+          </div>
+        </div>
+        {{/ next }}
+      </section>
+    </div>
+<!-- ********************************* End Body ******************************************* -->
+  </div>
+</section>
+<!-- ********************************* End Container ******************************************* -->
+
+{{> footer }}
+{{> javascript }}
+</body>
+</html>

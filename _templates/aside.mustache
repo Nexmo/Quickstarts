@@ -1,0 +1,16 @@
+<div class="col-md-3 aside">
+    <aside>
+        <div class="side-menu-container">
+            {{# sidebar}}
+                <div class="side-menu {{label}}">
+                    <h4>{{label}}</h4>
+                    <ul class="list-unstyled">
+                        {{# pages}}
+                            <li {{# current}}class="current"{{/ current}}><a href="/{{webpath}}/{{path}}/">{{label}}</a> <span>»</span></li>
+                        {{/ pages}}
+                    </ul>
+                </div>
+            {{/ sidebar}}
+        </div>
+    </aside>
+</div>

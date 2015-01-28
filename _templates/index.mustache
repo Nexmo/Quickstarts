@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+{{> head }}
+<body>
+{{> header }}
+
+<section>
+  <div class="container adjusted">
+
+    <div class="row front-lists">
+      {{# nav}}
+      <div class="col-md-6"> {{# icon}}<img class="front-icon" src="/{{webpath}}/{{icon}}" />{{/ icon}}
+        <div class="list-container">
+          <h3>{{label}}</h3>
+          <ul class="list-unstyled">
+            {{# pages }}
+            <li><a href="/{{webpath}}/{{path}}/">{{label}}</a> <span>»</span></li>
+            {{/ pages}}
+          </ul>
+        </div>
+      </div>
+      {{/ nav}}
+    </div>
+  </div>
+</section>
+{{> footer }}
+</body>
+{{> javascript }}
+</html>
