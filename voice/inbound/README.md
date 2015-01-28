@@ -1,4 +1,4 @@
-# Quickstart: Receiving Your First Call
+# Voice: Receiving Your First Call
 
 [Video](https://vimeo.com/102380947)
 

@@ -1,4 +1,4 @@
-# Quickstart: Recording Audio
+# VoiceXML: Recording Audio
 
 The purpose of VoiceXML is to present the caller - or user - with information, and prompt the user for a response. 
 Sometimes this is [recognized speech or DTMF digits][input], but it could also be recorded audio. 
@@ -18,7 +18,7 @@ handle it just like a file upload from an HTML form.
         </form>
     </vxml>
 
-[*View in Context*](./vxml/form.vxml#L10-L12)
+[Example](./vxml/form.vxml#L10-L12)
 
 Instead of `<field>` we'll use `<record>` to capture a recording. Like `<field>` the `name` attribute defines how the
 recording is referenced in the VoiceXML document, and what name is used when the data is submitted to a URL. Other 
@@ -31,7 +31,7 @@ We can nest a `<prompt>` inside to tell the caller what we want them to record:
         <prompt>Please leave your message after the beep, then press any key.</prompt>
     </record>        
 
-[*View in Context*](./vxml/form.vxml#L4-L6)
+[Example](./vxml/form.vxml#L4-L6)
 
 At this point, the caller would be prompted to record some audio, and that recording would be submitted to the URL.
 However, we can also use the recording in the VoiceXML document itself, so let's play it back to the caller using 
@@ -41,7 +41,7 @@ another `<prompt>` along with the the `<value>` element. The expression for `<va
         <prompt>Here's what you recorded <value expr="message"/>.</prompt>
     </block>
 
-[*View in Context*](./vxml/form.vxml#L7-L9)
+[Example](./vxml/form.vxml#L7-L9)
 
 Now our simple VoiceXML document prompts the caller to record a message, and plays it back to them.
 

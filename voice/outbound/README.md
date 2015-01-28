@@ -1,4 +1,4 @@
-# Quickstart: Making An Outbound Call
+# Voice: Making An Outbound Call
 
 [Video](https://vimeo.com/102381018)
 

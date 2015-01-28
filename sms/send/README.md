@@ -1,4 +1,4 @@
-# Quickstart: Sending Your First SMS
+# SMS: Sending Your First SMS
 
 [Video](https://vimeo.com/98321044)
 
@@ -24,7 +24,7 @@ number that's part of your account. Carrier and country specific restrictions on
 New accounts can only send to numbers that have been verified in the dashboard, and 'Nexmo Demo' will be added to all 
 messages. Once you've added funds to your account, those restrictions will be removed.
 
-Example: [cURL](./curl/send.sh) [PHP](./php/send.php)
+Example: [cURL][curl] [PHP](./php/send.php)
 
 Now that the parameters are set, fire off the request. 
 
@@ -38,3 +38,4 @@ Check out the [API documentation][2] for more on sending SMS messages.
 
 [1]: https://help.nexmo.com/categories/20079687-Country-Specifics
 [2]: https://docs.nexmo.com/index.php/sms-api/send-message
+[curl]: ./curl/send.sh

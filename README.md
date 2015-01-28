@@ -2,7 +2,6 @@
 
 [All Videos](https://vimeo.com/album/2978275) ([Autoplay](https://vimeo.com/couchmode/album/2978275/sort:preset/98321044))
 
-
 ## SMS
 
 - [Sending Your First SMS](./sms/send)
@@ -21,3 +20,4 @@
 - [Recording Audio](./vxml/recording)
 - [Transferring a Call](./vxml/transfer)
 - [Multiple Items and Forms](./vxml/multi)
+- [Error Events](./vxml/errors)

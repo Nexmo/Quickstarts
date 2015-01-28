@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version = "2.1">
+    <form>
+        <property name="confidencelevel" value=".7"/>
+        <property name="universals" value="help"/>
+        <field name="os">
+            <prompt>What operating system do you use?</prompt>
+            <prompt count="2">Please say the name of the operating system you use.</prompt>
+            <prompt count="3">Say windows, mac, or linux.</prompt>
+            <grammar xml:lang="en-US" root = "TOPLEVEL" mode="voice" >
+                <rule id="TOPLEVEL" scope="public">
+                    <one-of>
+                        <item> windows </item>
+                        <item> mac </item>
+                        <item> linux </item>
+                        <item> amiga </item>
+                    </one-of>
+                </rule>
+            </grammar>
+            <noinput>
+                <prompt>To better assist you, we need to know what computer you're using.</prompt>
+                <reprompt />
+            </noinput>
+            <noinput count="2">
+                <prompt>I didn't hear anything, perhaps there is an issue with the connection, or your phone is muted.</prompt>
+                <reprompt />
+            </noinput>
+            <nomatch>
+                <prompt>I didn't recognize that OS.</prompt>
+                <reprompt />
+            </nomatch>
+            <help>
+                <prompt>
+                    The operating system is the main interface of your computer. Its logo may be shown when you turn
+                    on your computer.
+                </prompt>
+                <reprompt />
+            </help>
+            <error>
+                <prompt>Sorry, something unexpected happened. Please call again.</prompt>
+                <exit />
+            </error>
+        </field>
+        <filled>
+            <prompt>Thank you, we'll get you <value expr="os"/> specific help.</prompt>
+            <submit next="./../php/form.php" method="post"/>
+        </filled>
+    </form>
+</vxml>

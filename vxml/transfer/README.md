@@ -1,4 +1,4 @@
-# Quickstart: Transferring a Call
+# VoiceXML: Transferring a Call
 
 Along with prompting a caller for information, VoiceXML also allows you transfer a ongoing call to an different number 
 or SIP address. And like [`<field>`][field] and [`<record>`][record] the `<transfer>` element behaves like other 
@@ -15,39 +15,14 @@ You can set the timeout for the transfer - the time given the other party to ans
 Like other `<form>` elements, `<prompt>` can be nested to notify the user of the transfer, and `<grammar>` can be used
 to allow the transfer to be ended with a DTMF or a spoken command.
 
-    <transfer name="result" dest="tel:+14849859853" bridge="true">
-        <prompt>Please wait while we transfer you.</prompt>
-        <grammar xml:lang="en-US" root = "TOPLEVEL" mode="voice" >
-            <rule id="TOPLEVEL" scope="public">
-                <one-of>
-                    <item> disconnect </item>
-                </one-of>
-            </rule>
-        </grammar>
-    </transfer>
-
-[*View in Context*](./vxml/transfer.vxml#L4-L13)
+[Example](./vxml/transfer.vxml#L4-L13)
 
 Once the transfer is complete, we can use the result value to drive some logic, and let the caller know what happened 
 (assuming they didn't end the transfer by hanging up). When nested in a `<form>`, the `<filled>` element is executed 
 once all the child items have a value. Adding a set of `<if>`, `<elseif>`, and `<else>` elements allows us to change 
 the flow based on the transfer's value.
 
-    <filled>
-        <if cond="result == 'busy'">
-            <prompt>Sorry, they're busy.</prompt>
-        <elseif cond="result == 'noanswer'" />
-            <prompt>Sorry, they didn't answer.</prompt>
-        <else />
-            <prompt>You spoke for <value expr="result$.duration" /> seconds.</prompt>
-        </if>
-
-        <if cond="result$.inputmode == 'voice'">
-            You ended the call by saying, <value expr="result$.utterance" />.
-        </if>
-    </filled>
-
-[*View in Context*](./vxml/transfer.vxml#L14-L26)
+[Example](./vxml/transfer.vxml#L14-L26)
 
 Along with the outcome of the transfer, there are a few 'shadow variables' providing things like call duration, and how 
 the call was ended. The shadow variable are accessed by appending `$` to the element's name, then using dot notation to 

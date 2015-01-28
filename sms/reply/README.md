@@ -1,4 +1,4 @@
-# Quickstart: Replying to SMS Messages
+# SMS: Replying to SMS Messages
 
 [Video](https://vimeo.com/98325185)
 
@@ -17,7 +17,7 @@ completely new message, unattached to the context of past messages.
 
 Find more about [sending messages][3] and [handling inbound messages][4] in the API documentation.
 
-[1]: ../send
-[2]: ../receive
+[1]: ../send/
+[2]: ../receive/
 [3]: https://docs.nexmo.com/index.php/sms-api/send-message
 [4]: https://docs.nexmo.com/index.php/sms-api/handle-inbound-message

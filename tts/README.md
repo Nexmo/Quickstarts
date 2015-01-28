@@ -1,4 +1,4 @@
-# Quickstart: Delivering Messages with Voice
+# Voice: Delivering Messages with Voice
 
 [Video](https://vimeo.com/99601185)
 

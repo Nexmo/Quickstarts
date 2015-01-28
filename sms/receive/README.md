@@ -1,4 +1,4 @@
-# Quickstart: Receiving Your First SMS
+# SMS: Receiving Your First SMS
 
 [Video](https://vimeo.com/98321160)
 
