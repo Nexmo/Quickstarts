@@ -1,90 +1,80 @@
 <!doctype html>
 <html lang="en">
 <head>
-<!-- Meta Information -->
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<title>Sending Your First SMS</title>
+    <!-- Meta Information -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Nexmo Quickstarts - VoiceXML: Multiple Items and Forms </title>
 
-<!-- CSS -->
-<link rel="stylesheet" type="text/css" href="/Quickstarts/css/bootstrap.min.css">
-<link rel="stylesheet" id="lato-css" href="//fonts.googleapis.com/css?family=Lato%3A100%2C300%2C400%2C700%2C900%2C100italic%2C300italic%2C400italic%2C700italic%2C900italic&amp;ver=4.1" type="text/css" media="all">
-<link rel="stylesheet" type="text/css" href="/Quickstarts/css/nexmo.css">
-<link rel="stylesheet" type="text/css" href="/Quickstarts/css/font-awesome.min.css">
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/Quickstarts/css/bootstrap.min.css">
+    <link rel="stylesheet" id="lato-css" href="//fonts.googleapis.com/css?family=Lato%3A100%2C300%2C400%2C700%2C900%2C100italic%2C300italic%2C400italic%2C700italic%2C900italic&amp;ver=4.1" type="text/css" media="all">
+    <link rel="stylesheet" type="text/css" href="/Quickstarts/css/nexmo.css">
+    <link rel="stylesheet" type="text/css" href="/Quickstarts/css/font-awesome.min.css">
 </head>
-
 <body>
-<!-- ********************************* Header ******************************************* -->
 <header>
-  <div class="container-fluid header-meta">
-    <h1 class="hide">Nexmo</h1>
-    <a href="index.html"><img src="/Quickstarts/img/logo.png" alt="Nexmo.com" width="168" height="31" class="logo"></a>
-    <div class="navbar navbar-default">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-      </div>
-      <nav id="navbar-collapse" class="pull-right collapse navbar-collapse">
-        <ul class="nav navbar-nav">
-          <li><a href="/Quickstarts/">Quickstarts</a></li>
-          <li><a href="https://nexmo.com">Nexmo.com</a></li>
-        </ul>
-      </nav>
+    <div class="container-fluid header-meta">
+        <h1 class="hide">Nexmo</h1>
+        <a href="https://nexmo.com"><img src="/Quickstarts/img/logo.png" alt="Nexmo.com" width="168" height="31" class="logo"></a>
+        <div class="navbar navbar-default">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+            </div>
+            <nav id="navbar-collapse" class="pull-right collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/Quickstarts/">Quickstarts</a></li>
+                    <li><a href="https://nexmo.com">Nexmo.com</a></li>
+                </ul>
+            </nav>
+        </div>
     </div>
-  </div>
-  <div class="container-fluid">
-    <div class="row text-center header-title">
-      <div class="col-md-12">
-        <h2 id='title'>Quickstart: Multiple Items and Forms</h2>
-        <!-- <div class="lead">If you've already made your way through the [`&lt;field&gt;`][field], [`&lt;record&gt;`][record], and [`&lt;transfer&gt;`][transfer]
+    <div class="container-fluid">
+        <div class="row text-center header-title">
+            <div class="col-md-12">
+                <h2 id='title'>  VoiceXML: Multiple Items and Forms </h2>
+                <!-- <div class="lead">If you've already made your way through the [`&lt;field&gt;`][field], [`&lt;record&gt;`][record], and [`&lt;transfer&gt;`][transfer]
 quickstarts, you've likely guessed that a single `&lt;form&gt;` can include more than one of those items - and you're 
 correct. A single form can prompt the user for spoken input or DTMF keypresses, record audio, transfer the call and 
 track the outcome. </div> -->
-      </div>
+            </div>
+        </div>
     </div>
-  </div>
-</header>
-<!-- ********************************* End Header ******************************************* -->
-
-<!-- ********************************* Container ******************************************* -->
+</header><!-- ********************************* Container ******************************************* -->
 <section class="body-container">
   <div class="container">
-<!-- ********************************* Aside ******************************************* -->
     <div class="col-md-3 aside">
-      <aside>
-        <div class="side-menu-container">
-          <div class="side-menu SMS">
-            <h4>SMS</h4>
-            <ul class="list-unstyled">
-              <li ><a href="/Quickstarts/./sms/send/">Sending Your First SMS</a> <span>»</span></li>
-              <li ><a href="/Quickstarts/./sms/receive/">Receiving Your First SMS</a> <span>»</span></li>
-              <li ><a href="/Quickstarts/./sms/reply/">Replying to SMS Messages</a> <span>»</span></li>
-            </ul>
-          </div>
-          <div class="side-menu Voice">
-            <h4>Voice</h4>
-            <ul class="list-unstyled">
-              <li ><a href="/Quickstarts/./tts/">Delivering Messages with Voice</a> <span>»</span></li>
-              <li ><a href="/Quickstarts/./voice/inbound/">Receiving Your First Call</a> <span>»</span></li>
-              <li ><a href="/Quickstarts/./voice/outbound/">Making An Outbound Call</a> <span>»</span></li>
-            </ul>
-          </div>
-          <div class="side-menu VXML">
-            <h4>VXML</h4>
-            <ul class="list-unstyled">
-              <li ><a href="/Quickstarts/./vxml/input/">Prompting for Input</a> <span>»</span></li>
-              <li ><a href="/Quickstarts/./vxml/recording/">Recording Audio</a> <span>»</span></li>
-              <li ><a href="/Quickstarts/./vxml/transfer/">Transferring a Call</a> <span>»</span></li>
-              <li class="current"><a href="/Quickstarts/./vxml/multi/">Multiple Items and Forms</a> <span>»</span></li>
-              <li ><a href="/Quickstarts/./vxml/errors/">Error Events</a> <span>»</span></li>
-            </ul>
-          </div>
-        </div>
-      </aside>
-    </div>
-<!-- ********************************* End Aside ******************************************* -->
-
-<!-- ********************************* Body ******************************************* -->
+        <aside>
+            <div class="side-menu-container">
+                    <div class="side-menu SMS">
+                        <h4>SMS</h4>
+                        <ul class="list-unstyled">
+                                <li ><a href="/Quickstarts/./sms/send/">Sending Your First SMS</a> <span>»</span></li>
+                                <li ><a href="/Quickstarts/./sms/receive/">Receiving Your First SMS</a> <span>»</span></li>
+                                <li ><a href="/Quickstarts/./sms/reply/">Replying to SMS Messages</a> <span>»</span></li>
+                        </ul>
+                    </div>
+                    <div class="side-menu Voice">
+                        <h4>Voice</h4>
+                        <ul class="list-unstyled">
+                                <li ><a href="/Quickstarts/./tts/">Delivering Messages with Voice</a> <span>»</span></li>
+                                <li ><a href="/Quickstarts/./voice/inbound/">Receiving Your First Call</a> <span>»</span></li>
+                                <li ><a href="/Quickstarts/./voice/outbound/">Making An Outbound Call</a> <span>»</span></li>
+                        </ul>
+                    </div>
+                    <div class="side-menu VoiceXML">
+                        <h4>VoiceXML</h4>
+                        <ul class="list-unstyled">
+                                <li ><a href="/Quickstarts/./vxml/input/">Prompting for Input</a> <span>»</span></li>
+                                <li ><a href="/Quickstarts/./vxml/recording/">Recording Audio</a> <span>»</span></li>
+                                <li ><a href="/Quickstarts/./vxml/transfer/">Transferring a Call</a> <span>»</span></li>
+                                <li class="current"><a href="/Quickstarts/./vxml/multi/">Multiple Items and Forms</a> <span>»</span></li>
+                                <li ><a href="/Quickstarts/./vxml/errors/">Error Events</a> <span>»</span></li>
+                        </ul>
+                    </div>
+            </div>
+        </aside>
+    </div><!-- ********************************* Body ******************************************* -->
     <div class="col-md-9">
       <section class="body-content">
         <div class="row">
@@ -159,10 +149,10 @@ should be ignored before reach the <code>&lt;submit&gt;</code>.</p>
 the caller to the item the picked, then - since all items have a value - <code>&lt;filled&gt;</code> submits the data to the web server.</p>
 <div class="code-snippets">
     <ul class="nav nav-tabs">
-                <li role="presentation" class="Full VXML54c05fda7acf7 active"><a href="#Full VXML54c05fda7acf7" aria-controls="Full VXML54c05fda7acf7" role="tab" data-toggle="tab">Full VXML</a></li>
+                <li role="presentation" class="Full VXML54c920ee62ad1 active"><a href="#Full VXML54c920ee62ad1" aria-controls="Full VXML54c920ee62ad1" role="tab" data-toggle="tab">Full VXML</a></li>
             </ul>
     <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="Full VXML54c05fda7acf7">
+                <div role="tabpanel" class="tab-pane active" id="Full VXML54c920ee62ad1">
             <pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;vxml version = &quot;2.1&quot;&gt;
     &lt;form id=&quot;welcome&quot;&gt;
@@ -247,10 +237,10 @@ the caller to the item the picked, then - since all items have a value - <code>&
 chose. The value of the other item will be whatever the <code>expr</code> set it to.</p>
 <div class="code-snippets">
     <ul class="nav nav-tabs">
-                <li role="presentation" class="PHP54c05fda7b05a active"><a href="#PHP54c05fda7b05a" aria-controls="PHP54c05fda7b05a" role="tab" data-toggle="tab">PHP</a></li>
+                <li role="presentation" class="PHP54c920ee62e2d active"><a href="#PHP54c920ee62e2d" aria-controls="PHP54c920ee62e2d" role="tab" data-toggle="tab">PHP</a></li>
             </ul>
     <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="PHP54c05fda7b05a">
+                <div role="tabpanel" class="tab-pane active" id="PHP54c920ee62e2d">
             <pre><code>&lt;?php
 //caller transferred to sales
 if(isset($_POST['sales'])){
@@ -288,69 +278,64 @@ and <a href="http://www.w3.org/TR/voicexml20/#dml2.1.1" class="external-link">ho
 </section>
 <!-- ********************************* End Container ******************************************* -->
 
-<!-- ********************************* Footer ******************************************* -->
 <footer>
-  <div class="container">
-    <div class="row footer-quick-menu">
-      <div class="col-md-4 text-center"> <a href="https://www.nexmo.com/blog">Resources</a> </div>
-      <div class="col-md-4 text-center"> <a href="https://www.nexmo.com/customers/">Customers</a> </div>
-      <div class="col-md-4 text-center"> <a href="https://www.nexmo.com/company/us/">Company</a>
-        </ul>
-      </div>
+    <div class="container">
+        <div class="row footer-quick-menu">
+            <div class="col-md-4 text-center"> <a href="https://www.nexmo.com/blog">Resources</a> </div>
+            <div class="col-md-4 text-center"> <a href="https://www.nexmo.com/customers/">Customers</a> </div>
+            <div class="col-md-4 text-center"> <a href="https://www.nexmo.com/company/us/">Company</a>
+                </ul>
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="container-fluid footer-menu">
-    <div class="row">
-      <div class="col-md-4">
-        <ul class="nav">
-          <li><a href="https://www.nexmo.com/blog">Blog</a></li>
-          <li><a href="https://www.nexmo.com/resources/webinars/">Webinars</a></li>
-          <li><a href="https://labs.nexmo.com/">Labs</a></li>
-        </ul>
-      </div>
-      <div class="col-md-4">
-        <ul class="nav">
-          <li><a href="https://www.nexmo.com/customers/">Trust Nexmo</a></li>
-          <li><a href="https://www.nexmo.com/customers/#case">Case Studies</a></li>
-        </ul>
-      </div>
-      <div class="col-md-4">
-        <ul class="nav">
-          <li><a href="https://www.nexmo.com/company/us/">About Nexmo</a></li>
-          <li><a href="https://www.nexmo.com/company/press/">Press</a></li>
-          <li><a href="https://www.nexmo.com/events/">Events</a></li>
-          <li><a href="https://www.nexmo.com/company/careers/">Careers</a></li>
-        </ul>
-      </div>
+    <div class="container-fluid footer-menu">
+        <div class="row">
+            <div class="col-md-4">
+                <ul class="nav">
+                    <li><a href="https://www.nexmo.com/blog">Blog</a></li>
+                    <li><a href="https://www.nexmo.com/resources/webinars/">Webinars</a></li>
+                    <li><a href="https://labs.nexmo.com/">Labs</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <ul class="nav">
+                    <li><a href="https://www.nexmo.com/customers/">Trust Nexmo</a></li>
+                    <li><a href="https://www.nexmo.com/customers/#case">Case Studies</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <ul class="nav">
+                    <li><a href="https://www.nexmo.com/company/us/">About Nexmo</a></li>
+                    <li><a href="https://www.nexmo.com/company/press/">Press</a></li>
+                    <li><a href="https://www.nexmo.com/events/">Events</a></li>
+                    <li><a href="https://www.nexmo.com/company/careers/">Careers</a></li>
+                </ul>
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="container">
-    <div class="row social-privacy">
-      <div class="col-md-6">
-        <ul class="nav social">
-          <li><a href="http://www.facebook.com/Nexmo"><i class="fa fa-facebook-square"></i> <span>Facebook</span></a></li>
-          <li><a href="http://twitter.com/nexmo"><i class="fa fa-twitter-square"></i> <span>Twitter</span></a></li>
-          <li><a href="https://www.linkedin.com/company/nexmo"><i class="fa fa-linkedin-square"></i> <span>LinkedIn</span></a></li>
-        </ul>
-      </div>
-      <div class="col-md-6">
-        <ul class="nav privacy">
-          <li><a href="https://www.nexmo.com/terms-use/">Terms of Use</a></li>
-          <li><a href="https://www.nexmo.com/privacy-policy/">Privacy Policy</a></li>
-        </ul>
-      </div>
+    <div class="container">
+        <div class="row social-privacy">
+            <div class="col-md-6">
+                <ul class="nav social">
+                    <li><a href="http://www.facebook.com/Nexmo"><i class="fa fa-facebook-square"></i> <span>Facebook</span></a></li>
+                    <li><a href="http://twitter.com/nexmo"><i class="fa fa-twitter-square"></i> <span>Twitter</span></a></li>
+                    <li><a href="https://www.linkedin.com/company/nexmo"><i class="fa fa-linkedin-square"></i> <span>LinkedIn</span></a></li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <ul class="nav privacy">
+                    <li><a href="https://www.nexmo.com/terms-use/">Terms of Use</a></li>
+                    <li><a href="https://www.nexmo.com/privacy-policy/">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row copywright">
+            <div class="col-md-6">
+                <p>© 2014 Nexmo - All rights reserved.</p>
+            </div>
+        </div>
     </div>
-    <div class="row copywright">
-      <div class="col-md-6">
-        <p>© 2014 Nexmo - All rights reserved.</p>
-      </div>
-    </div>
-  </div>
 </footer>
-<!-- ********************************* End Footer ******************************************* -->
-
-</body>
-
 <!-- JS -->
 <script src="/Quickstarts/js/jquery-1.11.2.min.js"></script>
 <script src="/Quickstarts/js/bootstrap.min.js"></script>
@@ -359,52 +344,70 @@ and <a href="http://www.w3.org/TR/voicexml20/#dml2.1.1" class="external-link">ho
 <script src="//f.vimeocdn.com/js/froogaloop2.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    var environment = 'production';
+    var track = (environment == 'production');
 
-  ga('create', 'UA-20475086-4', 'auto');
-  ga('send', 'pageview');
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  var trackOutboundLink = function(url) {
-     ga('send', 'event', 'outbound', 'click', url, {'hitCallback':
-       function () {
-       document.location = url;
-       }
-     });
-  }
-
-  var getVimeoCallback = function(event){
-    var sent = false;
-    return function(id){
-      if(!sent){
-        var player = $f(id);
-        sent = true;
-        player.api('getVideoUrl', function(url){
-          ga('send', 'event', 'video', event, url);
-        });
-      }
+    ga('create', 'UA-20475086-4', 'auto');
+    if(track){
+        ga('send', 'pageview');
+    } else {
+        console.log('skipped sending pageview');
     }
-  };
 
-  $(function(){
-    $('a.external-link').click(function(){
-      trackOutboundLink($(this).attr('href'));
-      return false;
-    });
+    var trackOutboundLink = function(url) {
+        if(track){
+            ga('send', 'event', 'outbound', 'click', url, {'hitCallback':
+                    function () {
+                        document.location = url;
+                    }
+            });
+        } else {
+            console.log('skipped sending outbound link: ' + url);
+            document.location = url;
+        }
+    }
 
-    var frame = $("#screencast")[0];
-    $f(frame).addEvent('ready', function(id){
-      var player = $f(id);
-      player.addEvent('play', getVimeoCallback('play'));
-      player.addEvent('finish', getVimeoCallback('finish'));
+    var getVimeoCallback = function(event){
+        var sent = false;
+        return function(id){
+            if(!sent){
+                var player = $f(id);
+                sent = true;
+                player.api('getVideoUrl', function(url){
+                    if(track){
+                        ga('send', 'event', 'video', event, url);
+                    } else {
+                        console.log('skipped sending video event: ' + event + ' ' + url);
+                    }
+                });
+            }
+        }
+    };
+
+    $(function(){
+        $('a.external-link').click(function(){
+            trackOutboundLink($(this).attr('href'));
+            return false;
+        });
+
+        var frame = $("#screencast")[0];
+        if(frame){
+            $f(frame).addEvent('ready', function(id){
+                var player = $f(id);
+                player.addEvent('play', getVimeoCallback('play'));
+                player.addEvent('finish', getVimeoCallback('finish'));
+            });
+        }
     });
-  });
 
 </script>
-
 <!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
+</body>
 </html>
