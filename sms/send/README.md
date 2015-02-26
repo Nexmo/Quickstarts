@@ -7,7 +7,7 @@ Sending your first SMS with Nexmo is as easy as making an HTTP request.
 Once you've created an account, you can find your API credentials in the dashboard. Use the 'API Settings' link to the 
 right near the top of the screen to reveal your API key and secret.
 
-Using the HTTP client in the language of your choice, or just cURL, create a request to `http://rest.nexmo.com/sms/json`
+Using the HTTP client in the language of your choice, or just cURL, create a request to `https://rest.nexmo.com/sms/json`
 
 If you prefer an XML response, use `/xml` instead. 
 

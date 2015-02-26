@@ -21,3 +21,6 @@
 - [Transferring a Call](./vxml/transfer)
 - [Multiple Items and Forms](./vxml/multi)
 - [Error Events](./vxml/errors)
+
+## Verify
+- [Verifying a Phone Number](./verify/verify)
