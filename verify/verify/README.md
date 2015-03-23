@@ -14,7 +14,7 @@ Make a call to `https://api.nexmo.com/verify/json` (or `/xml` if that's your pre
 with your `api_key` and `api_secret`. You can optionally select a `code_length` of 4 or 6 characters, and a language 
 using the `lg` parameter.
 
-Example: [cURL](./curl/send.sh) [PHP](./php/send.php)
+Example: [cURL](./curl/send.sh) [PHP](./php/send.php) [Python](./python/send.py) [Ruby](./ruby/send.rb) [NodeJS](./node/send.js)
 
 The response will be a JSON object (or XML) with a status. If the status is `0` the verification request was successful,
 and Nexmo has started the process. You can find all the [status codes][codes] in the API docs. Once you've started a 
@@ -30,7 +30,7 @@ carrier.
 Once you have the `code` send that and the `request_id` from the initial API request to: 
 `https://api.nexmo.com/verify/json` (or `/xml`) with your `api_key` and `api_secret`.
 
-Example: [cURL](./curl/check.sh) [PHP](./php/check.php)
+Example: [cURL](./curl/check.sh) [PHP](./php/check.php) [Python](./python/check.py) [Ruby](./ruby/send.rb) [NodeJS](./node/check.js)
 
 Again the `status` will be `0` if the code is correct, and the verification process successful. If not you can retry 
 until the process times out, or you reach the maximum number of attempts.
