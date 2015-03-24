@@ -13,7 +13,7 @@ var req = https.request(options);
 req.write(JSON.stringify({
   api_key: API_KEY,
   api_secret: API_SECRET,
-  number: NUMBER,
+  number: YOUR_NUMBER,
   brand: 'MyApp'
 }));
 

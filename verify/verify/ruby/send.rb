@@ -5,7 +5,7 @@ uri = URI.parse("https://api.nexmo.com/verify/json")
 params = {
     "api_key" => API_KEY,
     "api_secret" => API_SECRET,
-    "number" => NUMBER,
+    "number" => YOUR_NUMBER,
     "brand" => "MyApp"
 }
 

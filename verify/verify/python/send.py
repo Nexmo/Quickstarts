@@ -3,7 +3,7 @@ import urllib
 params = {
     'api_key': API_KEY,
     'api_secret': API_SECRET,
-    'number': NUMBER,
+    'number': YOUR_NUMBER,
     'brand': 'MyApp'
 }
 

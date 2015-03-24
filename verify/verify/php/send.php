@@ -1,7 +1,7 @@
 <?php
 $url = 'https://api.nexmo.com/verify/json?' . http_build_query([
-        'api_key' => NEXMO_KEY,
-        'api_secret' => NEXMO_SECRET,
+        'api_key' => API_KEY,
+        'api_secret' => API_SECRET,
         'number' => YOUR_NUMBER,
         'brand' => 'MyApp'
     ]);
