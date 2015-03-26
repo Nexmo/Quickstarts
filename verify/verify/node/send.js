@@ -1,22 +1,26 @@
 var https = require('https');
 
+var data = JSON.stringify({
+  api_key: API_KEY,
+  api_secret: API_SECRET,
+  number: YOUR_NUMBER,
+  brand: 'MyApp'
+});
+
 var options = {
   host: 'api.nexmo.com',
   path: '/verify/json',
   port: 443,
   method: 'POST',
-  headers: {'Content-Type': 'application/json'}
-}
+  headers: {
+    'Content-Type': 'application/json',
+    'Content-Length': Buffer.byteLength(data)
+  }
+};
 
 var req = https.request(options);
 
-req.write(JSON.stringify({
-  api_key: API_KEY,
-  api_secret: API_SECRET,
-  number: YOUR_NUMBER,
-  brand: 'MyApp'
-}));
-
+req.write(data);
 req.end();
 
 var responseData = '';
