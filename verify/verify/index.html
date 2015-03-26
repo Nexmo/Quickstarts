@@ -92,27 +92,27 @@ with your <code>api_key</code> and <code>api_secret</code>. You can optionally s
 using the <code>lg</code> parameter.</p>
 <div class="code-snippets">
     <ul class="nav nav-tabs">
-                <li role="presentation" class="cURL55107e6264fec active"><a href="#cURL55107e6264fec" aria-controls="cURL55107e6264fec" role="tab" data-toggle="tab">cURL</a></li>
-                <li role="presentation" class="PHP55107e6264fec"><a href="#PHP55107e6264fec" aria-controls="PHP55107e6264fec" role="tab" data-toggle="tab">PHP</a></li>
-                <li role="presentation" class="Python55107e6264fec"><a href="#Python55107e6264fec" aria-controls="Python55107e6264fec" role="tab" data-toggle="tab">Python</a></li>
-                <li role="presentation" class="Ruby55107e6264fec"><a href="#Ruby55107e6264fec" aria-controls="Ruby55107e6264fec" role="tab" data-toggle="tab">Ruby</a></li>
-                <li role="presentation" class="NodeJS55107e6264fec"><a href="#NodeJS55107e6264fec" aria-controls="NodeJS55107e6264fec" role="tab" data-toggle="tab">NodeJS</a></li>
+                <li role="presentation" class="cURL551408fcd9bd5 active"><a href="#cURL551408fcd9bd5" aria-controls="cURL551408fcd9bd5" role="tab" data-toggle="tab">cURL</a></li>
+                <li role="presentation" class="PHP551408fcd9bd5"><a href="#PHP551408fcd9bd5" aria-controls="PHP551408fcd9bd5" role="tab" data-toggle="tab">PHP</a></li>
+                <li role="presentation" class="Python551408fcd9bd5"><a href="#Python551408fcd9bd5" aria-controls="Python551408fcd9bd5" role="tab" data-toggle="tab">Python</a></li>
+                <li role="presentation" class="Ruby551408fcd9bd5"><a href="#Ruby551408fcd9bd5" aria-controls="Ruby551408fcd9bd5" role="tab" data-toggle="tab">Ruby</a></li>
+                <li role="presentation" class="NodeJS551408fcd9bd5"><a href="#NodeJS551408fcd9bd5" aria-controls="NodeJS551408fcd9bd5" role="tab" data-toggle="tab">NodeJS</a></li>
             </ul>
     <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="cURL55107e6264fec">
+                <div role="tabpanel" class="tab-pane active" id="cURL551408fcd9bd5">
             <pre><code>#!/bin/bash
 curl 'https://api.nexmo.com/verify/json' \
--d api_key=NEXMO_KEY \
--d api_secret=NEXMO_SECRET \
+-d api_key=API_KEY \
+-d api_secret=API_SECRET \
 -d number=YOUR_NUMBER \
 -d brand=MyApp
 </code></pre>
         </div>
-                <div role="tabpanel" class="tab-pane " id="PHP55107e6264fec">
+                <div role="tabpanel" class="tab-pane " id="PHP551408fcd9bd5">
             <pre><code>&lt;?php
 $url = 'https://api.nexmo.com/verify/json?' . http_build_query([
-        'api_key' =&gt; NEXMO_KEY,
-        'api_secret' =&gt; NEXMO_SECRET,
+        'api_key' =&gt; API_KEY,
+        'api_secret' =&gt; API_SECRET,
         'number' =&gt; YOUR_NUMBER,
         'brand' =&gt; 'MyApp'
     ]);
@@ -121,13 +121,13 @@ $ch = curl_init($url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $response = curl_exec($ch);</code></pre>
         </div>
-                <div role="tabpanel" class="tab-pane " id="Python55107e6264fec">
+                <div role="tabpanel" class="tab-pane " id="Python551408fcd9bd5">
             <pre><code>import urllib
 
 params = {
     'api_key': API_KEY,
     'api_secret': API_SECRET,
-    'number': NUMBER,
+    'number': YOUR_NUMBER,
     'brand': 'MyApp'
 }
 
@@ -137,7 +137,7 @@ response = urllib.urlopen(url)
 print response.read()
 </code></pre>
         </div>
-                <div role="tabpanel" class="tab-pane " id="Ruby55107e6264fec">
+                <div role="tabpanel" class="tab-pane " id="Ruby551408fcd9bd5">
             <pre><code>require &quot;net/http&quot;
 require &quot;uri&quot;
 
@@ -145,7 +145,7 @@ uri = URI.parse(&quot;https://api.nexmo.com/verify/json&quot;)
 params = {
     &quot;api_key&quot; =&gt; API_KEY,
     &quot;api_secret&quot; =&gt; API_SECRET,
-    &quot;number&quot; =&gt; NUMBER,
+    &quot;number&quot; =&gt; YOUR_NUMBER,
     &quot;brand&quot; =&gt; &quot;MyApp&quot;
 }
 
@@ -153,26 +153,30 @@ response = Net::HTTP.post_form(uri, params)
 
 puts response.body</code></pre>
         </div>
-                <div role="tabpanel" class="tab-pane " id="NodeJS55107e6264fec">
+                <div role="tabpanel" class="tab-pane " id="NodeJS551408fcd9bd5">
             <pre><code>var https = require('https');
+
+var data = JSON.stringify({
+  api_key: API_KEY,
+  api_secret: API_SECRET,
+  number: YOUR_NUMBER,
+  brand: 'MyApp'
+});
 
 var options = {
   host: 'api.nexmo.com',
   path: '/verify/json',
   port: 443,
   method: 'POST',
-  headers: {'Content-Type': 'application/json'}
-}
+  headers: {
+    'Content-Type': 'application/json',
+    'Content-Length': Buffer.byteLength(data)
+  }
+};
 
 var req = https.request(options);
 
-req.write(JSON.stringify({
-  api_key: API_KEY,
-  api_secret: API_SECRET,
-  number: NUMBER,
-  brand: 'MyApp'
-}));
-
+req.write(data);
 req.end();
 
 var responseData = '';
@@ -184,8 +188,7 @@ req.on('response', function(res){
   res.on('end', function(){
     console.log(JSON.parse(responseData));
   });
-});
-</code></pre>
+});</code></pre>
         </div>
             </div>
 </div>
@@ -201,27 +204,27 @@ carrier.</p>
 <code>https://api.nexmo.com/verify/json</code> (or <code>/xml</code>) with your <code>api_key</code> and <code>api_secret</code>.</p>
 <div class="code-snippets">
     <ul class="nav nav-tabs">
-                <li role="presentation" class="cURL55107e6265fe2 active"><a href="#cURL55107e6265fe2" aria-controls="cURL55107e6265fe2" role="tab" data-toggle="tab">cURL</a></li>
-                <li role="presentation" class="PHP55107e6265fe2"><a href="#PHP55107e6265fe2" aria-controls="PHP55107e6265fe2" role="tab" data-toggle="tab">PHP</a></li>
-                <li role="presentation" class="Python55107e6265fe2"><a href="#Python55107e6265fe2" aria-controls="Python55107e6265fe2" role="tab" data-toggle="tab">Python</a></li>
-                <li role="presentation" class="Ruby55107e6265fe2"><a href="#Ruby55107e6265fe2" aria-controls="Ruby55107e6265fe2" role="tab" data-toggle="tab">Ruby</a></li>
-                <li role="presentation" class="NodeJS55107e6265fe2"><a href="#NodeJS55107e6265fe2" aria-controls="NodeJS55107e6265fe2" role="tab" data-toggle="tab">NodeJS</a></li>
+                <li role="presentation" class="cURL551408fcdae40 active"><a href="#cURL551408fcdae40" aria-controls="cURL551408fcdae40" role="tab" data-toggle="tab">cURL</a></li>
+                <li role="presentation" class="PHP551408fcdae40"><a href="#PHP551408fcdae40" aria-controls="PHP551408fcdae40" role="tab" data-toggle="tab">PHP</a></li>
+                <li role="presentation" class="Python551408fcdae40"><a href="#Python551408fcdae40" aria-controls="Python551408fcdae40" role="tab" data-toggle="tab">Python</a></li>
+                <li role="presentation" class="Ruby551408fcdae40"><a href="#Ruby551408fcdae40" aria-controls="Ruby551408fcdae40" role="tab" data-toggle="tab">Ruby</a></li>
+                <li role="presentation" class="NodeJS551408fcdae40"><a href="#NodeJS551408fcdae40" aria-controls="NodeJS551408fcdae40" role="tab" data-toggle="tab">NodeJS</a></li>
             </ul>
     <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="cURL55107e6265fe2">
+                <div role="tabpanel" class="tab-pane active" id="cURL551408fcdae40">
             <pre><code>#!/bin/bash
 curl 'https://api.nexmo.com/verify/check/json' \
--d api_key=NEXMO_KEY \
--d api_secret=NEXMO_SECRET \
+-d api_key=API_KEY \
+-d api_secret=API_SECRET \
 -d request_id=a7d922f6a00442ee8e2f2a7646cb2a6d \
 -d code=1728
 </code></pre>
         </div>
-                <div role="tabpanel" class="tab-pane " id="PHP55107e6265fe2">
+                <div role="tabpanel" class="tab-pane " id="PHP551408fcdae40">
             <pre><code>&lt;?php
 $url = 'https://api.nexmo.com/verify/check/json?' . http_build_query([
-        'api_key' =&gt; NEXMO_KEY,
-        'api_secret' =&gt; NEXMO_SECRET,
+        'api_key' =&gt; API_KEY,
+        'api_secret' =&gt; API_SECRET,
         'request_id' =&gt; '1178e48a940a485eaca317a1237279e5',
         'code' =&gt; '6356'
     ]);
@@ -230,7 +233,7 @@ $ch = curl_init($url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $response = curl_exec($ch);</code></pre>
         </div>
-                <div role="tabpanel" class="tab-pane " id="Python55107e6265fe2">
+                <div role="tabpanel" class="tab-pane " id="Python551408fcdae40">
             <pre><code>import urllib
 
 params = {
@@ -246,7 +249,7 @@ response = urllib.urlopen(url)
 print response.read()
 </code></pre>
         </div>
-                <div role="tabpanel" class="tab-pane " id="Ruby55107e6265fe2">
+                <div role="tabpanel" class="tab-pane " id="Ruby551408fcdae40">
             <pre><code>require &quot;net/http&quot;
 require &quot;uri&quot;
 
@@ -254,7 +257,7 @@ uri = URI.parse(&quot;https://api.nexmo.com/verify/json&quot;)
 params = {
     &quot;api_key&quot; =&gt; API_KEY,
     &quot;api_secret&quot; =&gt; API_SECRET,
-    &quot;number&quot; =&gt; NUMBER,
+    &quot;number&quot; =&gt; YOUR_NUMBER,
     &quot;brand&quot; =&gt; &quot;MyApp&quot;
 }
 
@@ -262,26 +265,30 @@ response = Net::HTTP.post_form(uri, params)
 
 puts response.body</code></pre>
         </div>
-                <div role="tabpanel" class="tab-pane " id="NodeJS55107e6265fe2">
+                <div role="tabpanel" class="tab-pane " id="NodeJS551408fcdae40">
             <pre><code>var https = require('https');
+
+var data = JSON.stringify({
+  api_key: API_KEY,
+  api_secret: API_SECRET,
+  request_id: '1b770a645f4b4c9fa5fddd21dcefe0d4',
+  code: '2274'
+});
 
 var options = {
   host: 'api.nexmo.com',
   path: '/verify/check/json',
   port: 443,
   method: 'POST',
-  headers: {'Content-Type': 'application/json'}
-}
+  headers: {
+    'Content-Type': 'application/json',
+    'Content-Length': Buffer.byteLength(data)
+  }
+};
 
 var req = https.request(options);
 
-req.write(JSON.stringify({
-  api_key: API_KEY,
-  api_secret: API_SECRET,
-  request_id: '1b770a645f4b4c9fa5fddd21dcefe0d4',
-  code: '2274'
-}));
-
+req.write(data);
 req.end();
 
 var responseData = '';
