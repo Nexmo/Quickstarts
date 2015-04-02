@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Meta Information -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Nexmo Quickstarts - Quickstart: Getting Number Information </title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/Quickstarts/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/Quickstarts/css/nexmo.css">
+    <link rel="stylesheet" type="text/css" href="/Quickstarts/css/font-awesome.min.css">
+</head><body>
+<header>
+    <div class="container-fluid header-meta">
+        <h1 class="hide">Nexmo</h1>
+        <a href="https://nexmo.com"><img src="/Quickstarts/img/nexmo-logo--white.svg" alt="Nexmo" class="page-logo"></a>
+		<div class="navbar navbar-default">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+            </div>
+            <nav id="navbar-collapse" class="pull-right collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/Quickstarts/">Quickstarts</a></li>
+                    <li><a href="https://nexmo.com">Nexmo.com</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row text-center header-title">
+            <div class="col-md-12">
+                <h2 id='title'>  Quickstart: Getting Number Information </h2>
+                <!-- <div class="lead">The Number Insight API enables your application to retrieve information about a specific number: country and carrier,
+ported status, land line or mobile, and more.</div> -->
+            </div>
+        </div>
+    </div>
+</header><!-- ********************************* Container ******************************************* -->
+<section class="body-container">
+  <div class="container">
+    <div class="col-md-3 aside">
+        <aside>
+            <div class="side-menu-container">
+                    <div class="side-menu SMS">
+                        <h4>SMS</h4>
+                        <ul class="list-unstyled">
+                                <li ><a href="/Quickstarts/./sms/send/">Sending Your First SMS</a> <span>»</span></li>
+                                <li ><a href="/Quickstarts/./sms/receive/">Receiving Your First SMS</a> <span>»</span></li>
+                                <li ><a href="/Quickstarts/./sms/reply/">Replying to SMS Messages</a> <span>»</span></li>
+                        </ul>
+                    </div>
+                    <div class="side-menu Voice">
+                        <h4>Voice</h4>
+                        <ul class="list-unstyled">
+                                <li ><a href="/Quickstarts/./tts/">Delivering Messages with Voice</a> <span>»</span></li>
+                                <li ><a href="/Quickstarts/./voice/inbound/">Receiving Your First Call</a> <span>»</span></li>
+                                <li ><a href="/Quickstarts/./voice/outbound/">Making An Outbound Call</a> <span>»</span></li>
+                        </ul>
+                    </div>
+                    <div class="side-menu VoiceXML">
+                        <h4>VoiceXML</h4>
+                        <ul class="list-unstyled">
+                                <li ><a href="/Quickstarts/./vxml/input/">Prompting for Input</a> <span>»</span></li>
+                                <li ><a href="/Quickstarts/./vxml/recording/">Recording Audio</a> <span>»</span></li>
+                                <li ><a href="/Quickstarts/./vxml/transfer/">Transferring a Call</a> <span>»</span></li>
+                                <li ><a href="/Quickstarts/./vxml/multi/">Multiple Items and Forms</a> <span>»</span></li>
+                                <li ><a href="/Quickstarts/./vxml/errors/">Error Events</a> <span>»</span></li>
+                        </ul>
+                    </div>
+                    <div class="side-menu Verify &amp; Number Inisght">
+                        <h4>Verify &amp; Number Inisght</h4>
+                        <ul class="list-unstyled">
+                                <li ><a href="/Quickstarts/./verify/verify/">Verifying a Phone Number</a> <span>»</span></li>
+                                <li class="current"><a href="/Quickstarts/./ni/ni/">Getting Number Information</a> <span>»</span></li>
+                        </ul>
+                    </div>
+            </div>
+        </aside>
+    </div><!-- ********************************* Body ******************************************* -->
+    <div class="col-md-9">
+      <section class="body-content">
+        <div class="row">
+          <div class="col-md-12"><p>The Number Insight API enables your application to retrieve information about a specific number: country and carrier,
+ported status, land line or mobile, and more.</p>
+<p>Submitting a Number Insight request is simple, just pass the phone <code>number</code> and a <code>callback</code> URL to
+<code>https://rest.nexmo.com/ni/json</code> (also, you could use <code>/xml</code> if that's more your style). If you're only interested in a
+subset of information, you can send a comma separated list of <a href="https://docs.nexmo.com/index.php/number-insight/request"><code>features</code></a>.</p>
+<p>The response (JSON or XML) will contain pricing information, the status (<code>0</code> for success), and the <code>request_id</code>.</p>
+<div class="code-snippets">
+    <ul class="nav nav-tabs">
+                <li role="presentation" class="cURL551dc080d9f6b active"><a href="#cURL551dc080d9f6b" aria-controls="cURL551dc080d9f6b" role="tab" data-toggle="tab">cURL</a></li>
+                <li role="presentation" class="PHP551dc080d9f6b"><a href="#PHP551dc080d9f6b" aria-controls="PHP551dc080d9f6b" role="tab" data-toggle="tab">PHP</a></li>
+            </ul>
+    <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="cURL551dc080d9f6b">
+            <pre><code>#!/bin/bash
+curl 'https://rest.nexmo.com/ni/json' \
+-d api_key=$API_KEY \
+-d api_secret=$API_SECRET \
+-d number=$YOUR_NUMBER \
+-d callback=$YOUR_CALLBACK
+</code></pre>
+        </div>
+                <div role="tabpanel" class="tab-pane " id="PHP551dc080d9f6b">
+            <pre><code>&lt;?php
+$url = 'https://rest.nexmo.com/ni/json?' . http_build_query([
+        'api_key' =&gt; API_KEY,
+        'api_secret' =&gt; API_SECRET,
+        'number' =&gt; YOUR_NUMBER,
+        'callback' =&gt; YOUR_CALLBACK,
+    ]);
+
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$response = curl_exec($ch);
+error_log($response);</code></pre>
+        </div>
+            </div>
+</div>
+<p>Once the information has been gathered, Nexmo will <a href="https://docs.nexmo.com/index.php/number-insight/response">deliver the data by a callback</a>. You can use the
+<code>request_id</code> to tie a callback to the original request. You can also set a <code>client_ref</code> when sending the request, and
+that will be included in the callback data to help identify or segment usage. Of course, the number itself may be
+enough for most cases.</p>
+<p>All that's left is to parse the callback data - by default it'll be in the query string.</p>
+<div class="code-snippets">
+    <ul class="nav nav-tabs">
+                <li role="presentation" class="PHP551dc080da4e8 active"><a href="#PHP551dc080da4e8" aria-controls="PHP551dc080da4e8" role="tab" data-toggle="tab">PHP</a></li>
+            </ul>
+    <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="PHP551dc080da4e8">
+            <pre><code>&lt;?php
+if(!isset($_GET['request_id'])){
+    return; //doesn't look like a number insight callback
+}
+
+foreach($_GET as $param =&gt; $value){
+    error_log($param . ': ' . $value);
+}</code></pre>
+        </div>
+            </div>
+</div>
+<p>Take a look at the full <a href="https://docs.nexmo.com/index.php/number-insight">Number Insight documentation</a> for a full list of response features, and optional
+parameters.</p>
+</div>
+        </div>
+      </section>
+    </div>
+<!-- ********************************* End Body ******************************************* -->
+  </div>
+</section>
+<!-- ********************************* End Container ******************************************* -->
+
+<footer>
+  <div class="container-fluid pre-footer">
+    <div class="row">
+      <div class="col-md-12">
+<div class="cta cta--flex-center">
+			<div class="cta__eq cta__primary">
+				<span class="block">Start using Nexmo today</span>
+			</div>
+			<div class="cta__eq cta__secondary">
+			<a href="https://dashboard.nexmo.com/register" class="btn">Try it for free</a>
+			</div>
+		</div>
+</div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="col-md-4">
+      <ul  class="nav copyright">
+        <li><img src="/Quickstarts/img/footer-logo.svg" alt="nexmo" class="footer-logo"></li>
+        <li>© 2015 Nexmo Inc.</li>
+        <li>
+          <ul class="footer-social">
+            <li> <a href="https://twitter.com/nexmo" class="social-icon--twitter" target="_blank"> <span class="hide">Twitter</span> </a> </li>
+            <li> <a href="https://www.facebook.com/Nexmo" class="social-icon--facebook" target="_blank"> <span class="hide">Facebook</span> </a> </li>
+            <li> <a href="https://www.linkedin.com/company/nexmo" class="social-icon--linkedin" target="_blank"> <span class="hide">Linkedin</span> </a> </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-2">
+      <ul class="nav">
+        <li> Resources </li>
+        <li> <a hreflang="en" href="https://www.nexmo.com/blog">Blog</a> </li>
+        <li> <a hreflang="en" href="https://www.nexmo.com/webinars">Webinars</a> </li>
+        <li> <a hreflang="en" href="https://labs.nexmo.com/">Labs</a> </li>
+      </ul>
+    </div>
+    <div class="col-md-2">
+      <ul class="nav">
+        <li> Customers </li>
+        <li> <a hreflang="en" href="https://www.nexmo.com/customers/#case-studies">Case Studies</a> </li>
+        <li> <a hreflang="en" href="https://www.nexmo.com/customers/#trust-nexmo">Trust Nexmo</a> </li>
+      </ul>
+    </div>
+    <div class="col-md-2">
+      <ul class="nav">
+        <li> Company </li>
+        <li> <a hreflang="en" href="https://www.nexmo.com/company/us/">About</a> </li>
+        <li> <a hreflang="en" href="https://www.nexmo.com/company/leadership/">Leadership</a> </li>
+        <li> <a hreflang="en" href="https://www.nexmo.com/company/press">Press</a> </li>
+        <li> <a hreflang="en" href="https://www.nexmo.com/company/events">Events</a> </li>
+        <li> <a hreflang="en" href="https://www.nexmo.com/company/careers">Careers</a> </li>
+        <li> <a hreflang="en" href="https://www.nexmo.com/contact-us">Contact us</a> </li>
+      </ul>
+    </div>
+    <div class="col-md-2">
+      <ul class="nav">
+        <li> &nbsp; </li>
+        <li> <a hreflang="en" href="https://www.nexmo.com/terms-use">Terms of use</a> </li>
+        <li> <a hreflang="en" href="https://www.nexmo.com/privacy-policy">Privacy policy</a> </li>
+      </ul>
+    </div>
+  </div>
+  </div>
+</footer><!-- JS -->
+<script src="/Quickstarts/js/jquery-1.11.2.min.js"></script>
+<script src="/Quickstarts/js/bootstrap.min.js"></script>
+<script src="/Quickstarts/js/nexmo.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script src="//f.vimeocdn.com/js/froogaloop2.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>
+    var environment = 'test';
+    var track = (environment == 'production');
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-20475086-4', 'auto');
+    if(track){
+        ga('send', 'pageview');
+    } else {
+        console.log('skipped sending pageview');
+    }
+
+    var trackOutboundLink = function(url) {
+        if(track){
+            ga('send', 'event', 'outbound', 'click', url, {'hitCallback':
+                    function () {
+                        document.location = url;
+                    }
+            });
+        } else {
+            console.log('skipped sending outbound link: ' + url);
+            document.location = url;
+        }
+    }
+
+    var getVimeoCallback = function(event){
+        var sent = false;
+        return function(id){
+            if(!sent){
+                var player = $f(id);
+                sent = true;
+                player.api('getVideoUrl', function(url){
+                    if(track){
+                        ga('send', 'event', 'video', event, url);
+                    } else {
+                        console.log('skipped sending video event: ' + event + ' ' + url);
+                    }
+                });
+            }
+        }
+    };
+
+    $(function(){
+        $('a.external-link').click(function(){
+            trackOutboundLink($(this).attr('href'));
+            return false;
+        });
+
+        var frame = $("#screencast")[0];
+        if(frame){
+            $f(frame).addEvent('ready', function(id){
+                var player = $f(id);
+                player.addEvent('play', getVimeoCallback('play'));
+                player.addEvent('finish', getVimeoCallback('finish'));
+            });
+        }
+    });
+
+</script>
+<!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</body>
+</html>
