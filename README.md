@@ -22,5 +22,6 @@
 - [Multiple Items and Forms](./vxml/multi)
 - [Error Events](./vxml/errors)
 
-## Verify
+## Verify & Number Inisght
 - [Verifying a Phone Number](./verify/verify)
+- [Getting Number Information](./ni/ni)
