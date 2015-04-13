@@ -1,7 +1,7 @@
 <?php
 $url = 'https://rest.nexmo.com/call/json?' . http_build_query(array(
-        'api_key' => NEXMO_KEY,
-        'api_secret' => NEXMO_SECRET,
+        'api_key' => API_KEY,
+        'api_secret' => API_SECRET,
         'to' => YOUR_NUMBER,
         'from' => NEXMO_NUMBER,
         'answer_url' => 'http://example.com/outbound.vxml',
