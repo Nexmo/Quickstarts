@@ -67,10 +67,11 @@
                                 <li ><a href="/Quickstarts/./vxml/errors/">Error Events</a> <span>»</span></li>
                         </ul>
                     </div>
-                    <div class="side-menu Verify">
-                        <h4>Verify</h4>
+                    <div class="side-menu Verify &amp; Number Inisght">
+                        <h4>Verify &amp; Number Inisght</h4>
                         <ul class="list-unstyled">
                                 <li ><a href="/Quickstarts/./verify/verify/">Verifying a Phone Number</a> <span>»</span></li>
+                                <li ><a href="/Quickstarts/./ni/ni/">Getting Number Information</a> <span>»</span></li>
                         </ul>
                     </div>
             </div>
@@ -97,11 +98,11 @@ data. But unlike SMS requests, Nexmo expects the response to contain a valid Voi
 <p>Voice XML (VXML) is to a phone what HTML is to a browser.</p>
 <div class="code-snippets">
     <ul class="nav nav-tabs">
-                <li role="presentation" class="VXML54ef6acd5b36d active"><a href="#VXML54ef6acd5b36d" aria-controls="VXML54ef6acd5b36d" role="tab" data-toggle="tab">VXML</a></li>
-                <li role="presentation" class="PHP54ef6acd5b36d"><a href="#PHP54ef6acd5b36d" aria-controls="PHP54ef6acd5b36d" role="tab" data-toggle="tab">PHP</a></li>
+                <li role="presentation" class="VXML552c554310540 active"><a href="#VXML552c554310540" aria-controls="VXML552c554310540" role="tab" data-toggle="tab">VXML</a></li>
+                <li role="presentation" class="PHP552c554310540"><a href="#PHP552c554310540" aria-controls="PHP552c554310540" role="tab" data-toggle="tab">PHP</a></li>
             </ul>
     <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="VXML54ef6acd5b36d">
+                <div role="tabpanel" class="tab-pane active" id="VXML552c554310540">
             <pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;vxml version=&quot;2.1&quot;&gt;
     &lt;form&gt;
@@ -111,7 +112,7 @@ data. But unlike SMS requests, Nexmo expects the response to contain a valid Voi
     &lt;/form&gt;
 &lt;/vxml&gt;</code></pre>
         </div>
-                <div role="tabpanel" class="tab-pane " id="PHP54ef6acd5b36d">
+                <div role="tabpanel" class="tab-pane " id="PHP552c554310540">
             <pre><code>&lt;?php
 // accept both query string and post
 $request = array_merge($_GET, $_POST);

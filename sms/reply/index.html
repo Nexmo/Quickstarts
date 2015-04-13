@@ -68,10 +68,11 @@ haven't yet, you may want to visit the Quickstarts for [sending your first SMS][
                                 <li ><a href="/Quickstarts/./vxml/errors/">Error Events</a> <span>»</span></li>
                         </ul>
                     </div>
-                    <div class="side-menu Verify">
-                        <h4>Verify</h4>
+                    <div class="side-menu Verify &amp; Number Inisght">
+                        <h4>Verify &amp; Number Inisght</h4>
                         <ul class="list-unstyled">
                                 <li ><a href="/Quickstarts/./verify/verify/">Verifying a Phone Number</a> <span>»</span></li>
+                                <li ><a href="/Quickstarts/./ni/ni/">Getting Number Information</a> <span>»</span></li>
                         </ul>
                     </div>
             </div>
@@ -93,10 +94,10 @@ haven't yet, you may want to visit the Quickstarts for <a href="../send/">sendin
 <p>To send a reply, send an outbound message using the inbound <code>msisdn</code> as the <code>to</code>, and the inbound <code>to</code> as the <code>from</code>.</p>
 <div class="code-snippets">
     <ul class="nav nav-tabs">
-                <li role="presentation" class="PHP54ef6acd12c45 active"><a href="#PHP54ef6acd12c45" aria-controls="PHP54ef6acd12c45" role="tab" data-toggle="tab">PHP</a></li>
+                <li role="presentation" class="PHP552c5542bb1db active"><a href="#PHP552c5542bb1db" aria-controls="PHP552c5542bb1db" role="tab" data-toggle="tab">PHP</a></li>
             </ul>
     <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="PHP54ef6acd12c45">
+                <div role="tabpanel" class="tab-pane active" id="PHP552c5542bb1db">
             <pre><code>&lt;?php
 // work with get or post
 $request = array_merge($_GET, $_POST);
@@ -110,8 +111,8 @@ if(!isset($request['to']) OR !isset($request['msisdn']) OR !isset($request['text
 $text = str_rot13($request['text']);
 
 $url = 'https://rest.nexmo.com/sms/json?' . http_build_query([
-        'api_key' =&gt; NEXMO_KEY,
-        'api_secret' =&gt; NEXMO_SECRET,
+        'api_key' =&gt; API_KEY,
+        'api_secret' =&gt; API_SECRET,
         'to' =&gt; $request['msisdn'],
         'from' =&gt; $request['to'],
         'text' =&gt; $text

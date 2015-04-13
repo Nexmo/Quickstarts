@@ -68,10 +68,11 @@ also eliminates the need for you to generate and securely store single use codes
                                 <li ><a href="/Quickstarts/./vxml/errors/">Error Events</a> <span>»</span></li>
                         </ul>
                     </div>
-                    <div class="side-menu Verify">
-                        <h4>Verify</h4>
+                    <div class="side-menu Verify &amp; Number Inisght">
+                        <h4>Verify &amp; Number Inisght</h4>
                         <ul class="list-unstyled">
                                 <li class="current"><a href="/Quickstarts/./verify/verify/">Verifying a Phone Number</a> <span>»</span></li>
+                                <li ><a href="/Quickstarts/./ni/ni/">Getting Number Information</a> <span>»</span></li>
                         </ul>
                     </div>
             </div>
@@ -92,14 +93,14 @@ with your <code>api_key</code> and <code>api_secret</code>. You can optionally s
 using the <code>lg</code> parameter.</p>
 <div class="code-snippets">
     <ul class="nav nav-tabs">
-                <li role="presentation" class="cURL551408fcd9bd5 active"><a href="#cURL551408fcd9bd5" aria-controls="cURL551408fcd9bd5" role="tab" data-toggle="tab">cURL</a></li>
-                <li role="presentation" class="PHP551408fcd9bd5"><a href="#PHP551408fcd9bd5" aria-controls="PHP551408fcd9bd5" role="tab" data-toggle="tab">PHP</a></li>
-                <li role="presentation" class="Python551408fcd9bd5"><a href="#Python551408fcd9bd5" aria-controls="Python551408fcd9bd5" role="tab" data-toggle="tab">Python</a></li>
-                <li role="presentation" class="Ruby551408fcd9bd5"><a href="#Ruby551408fcd9bd5" aria-controls="Ruby551408fcd9bd5" role="tab" data-toggle="tab">Ruby</a></li>
-                <li role="presentation" class="NodeJS551408fcd9bd5"><a href="#NodeJS551408fcd9bd5" aria-controls="NodeJS551408fcd9bd5" role="tab" data-toggle="tab">NodeJS</a></li>
+                <li role="presentation" class="cURL552c554471235 active"><a href="#cURL552c554471235" aria-controls="cURL552c554471235" role="tab" data-toggle="tab">cURL</a></li>
+                <li role="presentation" class="PHP552c554471235"><a href="#PHP552c554471235" aria-controls="PHP552c554471235" role="tab" data-toggle="tab">PHP</a></li>
+                <li role="presentation" class="Python552c554471235"><a href="#Python552c554471235" aria-controls="Python552c554471235" role="tab" data-toggle="tab">Python</a></li>
+                <li role="presentation" class="Ruby552c554471235"><a href="#Ruby552c554471235" aria-controls="Ruby552c554471235" role="tab" data-toggle="tab">Ruby</a></li>
+                <li role="presentation" class="NodeJS552c554471235"><a href="#NodeJS552c554471235" aria-controls="NodeJS552c554471235" role="tab" data-toggle="tab">NodeJS</a></li>
             </ul>
     <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="cURL551408fcd9bd5">
+                <div role="tabpanel" class="tab-pane active" id="cURL552c554471235">
             <pre><code>#!/bin/bash
 curl 'https://api.nexmo.com/verify/json' \
 -d api_key=API_KEY \
@@ -108,7 +109,7 @@ curl 'https://api.nexmo.com/verify/json' \
 -d brand=MyApp
 </code></pre>
         </div>
-                <div role="tabpanel" class="tab-pane " id="PHP551408fcd9bd5">
+                <div role="tabpanel" class="tab-pane " id="PHP552c554471235">
             <pre><code>&lt;?php
 $url = 'https://api.nexmo.com/verify/json?' . http_build_query([
         'api_key' =&gt; API_KEY,
@@ -121,7 +122,7 @@ $ch = curl_init($url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $response = curl_exec($ch);</code></pre>
         </div>
-                <div role="tabpanel" class="tab-pane " id="Python551408fcd9bd5">
+                <div role="tabpanel" class="tab-pane " id="Python552c554471235">
             <pre><code>import urllib
 
 params = {
@@ -137,7 +138,7 @@ response = urllib.urlopen(url)
 print response.read()
 </code></pre>
         </div>
-                <div role="tabpanel" class="tab-pane " id="Ruby551408fcd9bd5">
+                <div role="tabpanel" class="tab-pane " id="Ruby552c554471235">
             <pre><code>require &quot;net/http&quot;
 require &quot;uri&quot;
 
@@ -153,7 +154,7 @@ response = Net::HTTP.post_form(uri, params)
 
 puts response.body</code></pre>
         </div>
-                <div role="tabpanel" class="tab-pane " id="NodeJS551408fcd9bd5">
+                <div role="tabpanel" class="tab-pane " id="NodeJS552c554471235">
             <pre><code>var https = require('https');
 
 var data = JSON.stringify({
@@ -204,14 +205,14 @@ carrier.</p>
 <code>https://api.nexmo.com/verify/json</code> (or <code>/xml</code>) with your <code>api_key</code> and <code>api_secret</code>.</p>
 <div class="code-snippets">
     <ul class="nav nav-tabs">
-                <li role="presentation" class="cURL551408fcdae40 active"><a href="#cURL551408fcdae40" aria-controls="cURL551408fcdae40" role="tab" data-toggle="tab">cURL</a></li>
-                <li role="presentation" class="PHP551408fcdae40"><a href="#PHP551408fcdae40" aria-controls="PHP551408fcdae40" role="tab" data-toggle="tab">PHP</a></li>
-                <li role="presentation" class="Python551408fcdae40"><a href="#Python551408fcdae40" aria-controls="Python551408fcdae40" role="tab" data-toggle="tab">Python</a></li>
-                <li role="presentation" class="Ruby551408fcdae40"><a href="#Ruby551408fcdae40" aria-controls="Ruby551408fcdae40" role="tab" data-toggle="tab">Ruby</a></li>
-                <li role="presentation" class="NodeJS551408fcdae40"><a href="#NodeJS551408fcdae40" aria-controls="NodeJS551408fcdae40" role="tab" data-toggle="tab">NodeJS</a></li>
+                <li role="presentation" class="cURL552c554472437 active"><a href="#cURL552c554472437" aria-controls="cURL552c554472437" role="tab" data-toggle="tab">cURL</a></li>
+                <li role="presentation" class="PHP552c554472437"><a href="#PHP552c554472437" aria-controls="PHP552c554472437" role="tab" data-toggle="tab">PHP</a></li>
+                <li role="presentation" class="Python552c554472437"><a href="#Python552c554472437" aria-controls="Python552c554472437" role="tab" data-toggle="tab">Python</a></li>
+                <li role="presentation" class="Ruby552c554472437"><a href="#Ruby552c554472437" aria-controls="Ruby552c554472437" role="tab" data-toggle="tab">Ruby</a></li>
+                <li role="presentation" class="NodeJS552c554472437"><a href="#NodeJS552c554472437" aria-controls="NodeJS552c554472437" role="tab" data-toggle="tab">NodeJS</a></li>
             </ul>
     <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="cURL551408fcdae40">
+                <div role="tabpanel" class="tab-pane active" id="cURL552c554472437">
             <pre><code>#!/bin/bash
 curl 'https://api.nexmo.com/verify/check/json' \
 -d api_key=API_KEY \
@@ -220,7 +221,7 @@ curl 'https://api.nexmo.com/verify/check/json' \
 -d code=1728
 </code></pre>
         </div>
-                <div role="tabpanel" class="tab-pane " id="PHP551408fcdae40">
+                <div role="tabpanel" class="tab-pane " id="PHP552c554472437">
             <pre><code>&lt;?php
 $url = 'https://api.nexmo.com/verify/check/json?' . http_build_query([
         'api_key' =&gt; API_KEY,
@@ -233,7 +234,7 @@ $ch = curl_init($url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $response = curl_exec($ch);</code></pre>
         </div>
-                <div role="tabpanel" class="tab-pane " id="Python551408fcdae40">
+                <div role="tabpanel" class="tab-pane " id="Python552c554472437">
             <pre><code>import urllib
 
 params = {
@@ -249,7 +250,7 @@ response = urllib.urlopen(url)
 print response.read()
 </code></pre>
         </div>
-                <div role="tabpanel" class="tab-pane " id="Ruby551408fcdae40">
+                <div role="tabpanel" class="tab-pane " id="Ruby552c554472437">
             <pre><code>require &quot;net/http&quot;
 require &quot;uri&quot;
 
@@ -265,7 +266,7 @@ response = Net::HTTP.post_form(uri, params)
 
 puts response.body</code></pre>
         </div>
-                <div role="tabpanel" class="tab-pane " id="NodeJS551408fcdae40">
+                <div role="tabpanel" class="tab-pane " id="NodeJS552c554472437">
             <pre><code>var https = require('https');
 
 var data = JSON.stringify({
@@ -309,6 +310,11 @@ req.on('response', function(res){
 until the process times out, or you reach the maximum number of attempts.</p>
 <p>Check out the <a href="https://docs.nexmo.com/index.php/verify">API documentation</a> for more on the Verify API.</p>
 </div>
+        </div>
+        <div class="row next">
+          <div class="col-md-12">
+            <a href="/Quickstarts/./ni/ni/" class="btn"><span>Next</span>: Getting Number Information <span class="glyphicon glyphicon-play"></span></a>
+          </div>
         </div>
       </section>
     </div>
@@ -389,7 +395,7 @@ until the process times out, or you reach the maximum number of attempts.</p>
 <script src="//f.vimeocdn.com/js/froogaloop2.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 <script>
-    var environment = 'test';
+    var environment = 'production';
     var track = (environment == 'production');
 
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

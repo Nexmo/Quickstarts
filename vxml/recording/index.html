@@ -68,10 +68,11 @@ Sometimes this is [recognized speech or DTMF digits][input], but it could also b
                                 <li ><a href="/Quickstarts/./vxml/errors/">Error Events</a> <span>»</span></li>
                         </ul>
                     </div>
-                    <div class="side-menu Verify">
-                        <h4>Verify</h4>
+                    <div class="side-menu Verify &amp; Number Inisght">
+                        <h4>Verify &amp; Number Inisght</h4>
                         <ul class="list-unstyled">
                                 <li ><a href="/Quickstarts/./verify/verify/">Verifying a Phone Number</a> <span>»</span></li>
+                                <li ><a href="/Quickstarts/./ni/ni/">Getting Number Information</a> <span>»</span></li>
                         </ul>
                     </div>
             </div>
@@ -126,10 +127,10 @@ another <code>&lt;prompt&gt;</code> along with the the <code>&lt;value&gt;</code
 <p>Now our simple VoiceXML document prompts the caller to record a message, and plays it back to them.</p>
 <div class="code-snippets">
     <ul class="nav nav-tabs">
-                <li role="presentation" class="Full VXML54ef6acde0028 active"><a href="#Full VXML54ef6acde0028" aria-controls="Full VXML54ef6acde0028" role="tab" data-toggle="tab">Full VXML</a></li>
+                <li role="presentation" class="Full VXML552c5543940a4 active"><a href="#Full VXML552c5543940a4" aria-controls="Full VXML552c5543940a4" role="tab" data-toggle="tab">Full VXML</a></li>
             </ul>
     <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="Full VXML54ef6acde0028">
+                <div role="tabpanel" class="tab-pane active" id="Full VXML552c5543940a4">
             <pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;vxml version = &quot;2.1&quot;&gt;
     &lt;form&gt;
@@ -152,10 +153,10 @@ recording is sent to the defined URL. If VoiceXML is returned by that URL, the c
 side script to save the recording.</p>
 <div class="code-snippets">
     <ul class="nav nav-tabs">
-                <li role="presentation" class="PHP54ef6acde040c active"><a href="#PHP54ef6acde040c" aria-controls="PHP54ef6acde040c" role="tab" data-toggle="tab">PHP</a></li>
+                <li role="presentation" class="PHP552c554394499 active"><a href="#PHP552c554394499" aria-controls="PHP552c554394499" role="tab" data-toggle="tab">PHP</a></li>
             </ul>
     <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="PHP54ef6acde040c">
+                <div role="tabpanel" class="tab-pane active" id="PHP552c554394499">
             <pre><code>&lt;?php
 if(!isset($_FILES['message'])){
     return; //not a post from our script
