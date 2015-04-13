@@ -4,8 +4,9 @@
 
 When sending an SMS isn't the optimal solution, sending a voice message is just as easy with our Text To Speech API. 
 
-If you've already sent an SMS, switching to TTS is simple. The only change you need to make is swapping the `sms` in the 
-API URL to `tts`. The `to`, `from`, and `text` parameters stay the same.
+If you've already sent an SMS, switching to TTS is simple. The only change you need to make is swapping the API url from
+`https://rest.nexmo.com/sms/json` to  `https://api.nexmo.com/tts/json` (or `xml` if that's your preference). The `to`, 
+`from`, and `text` parameters stay the same.
 
 Example: [cURL](./curl/tts.sh) [PHP](./php/tts.php)
 
