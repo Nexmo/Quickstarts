@@ -1,7 +1,5 @@
 # Quickstart: Getting a Verification Status
 
-- verify requests rely on the user providing the code
-
 In most cases the success of the verification process is determined when the [user provided code is checked][verify]. 
 However, it is possible to check the status of a verification during the process, as well as after the process has 
 completed.
