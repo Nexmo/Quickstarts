@@ -71,6 +71,8 @@
                         <h4>Verify &amp; Number Inisght</h4>
                         <ul class="list-unstyled">
                                 <li ><a href="/Quickstarts/./verify/verify/">Verifying a Phone Number</a> <span>»</span></li>
+                                <li ><a href="/Quickstarts/./verify/control/">Controlling a Verification</a> <span>»</span></li>
+                                <li ><a href="/Quickstarts/./verify/search/">Checking a Verification Status</a> <span>»</span></li>
                                 <li ><a href="/Quickstarts/./ni/ni/">Getting Number Information</a> <span>»</span></li>
                         </ul>
                     </div>
@@ -103,11 +105,11 @@ number that's part of your account. Carrier and country specific restrictions on
 messages. Once you've added funds to your account, those restrictions will be removed.</p>
 <div class="code-snippets">
     <ul class="nav nav-tabs">
-                <li role="presentation" class="cURL552c554267112 active"><a href="#cURL552c554267112" aria-controls="cURL552c554267112" role="tab" data-toggle="tab">cURL</a></li>
-                <li role="presentation" class="PHP552c554267112"><a href="#PHP552c554267112" aria-controls="PHP552c554267112" role="tab" data-toggle="tab">PHP</a></li>
+                <li role="presentation" class="cURL55afbcf42b618 active"><a href="#cURL55afbcf42b618" aria-controls="cURL55afbcf42b618" role="tab" data-toggle="tab">cURL</a></li>
+                <li role="presentation" class="PHP55afbcf42b618"><a href="#PHP55afbcf42b618" aria-controls="PHP55afbcf42b618" role="tab" data-toggle="tab">PHP</a></li>
             </ul>
     <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="cURL552c554267112">
+                <div role="tabpanel" class="tab-pane active" id="cURL55afbcf42b618">
             <pre><code>#!/bin/bash
 curl 'https://rest.nexmo.com/sms/json' \
 -d api_key=API_KEY \
@@ -117,7 +119,7 @@ curl 'https://rest.nexmo.com/sms/json' \
 -d from=NEXMO_NUMBER
 </code></pre>
         </div>
-                <div role="tabpanel" class="tab-pane " id="PHP552c554267112">
+                <div role="tabpanel" class="tab-pane " id="PHP55afbcf42b618">
             <pre><code>&lt;?php
 $url = 'https://rest.nexmo.com/sms/json?' . http_build_query([
         'api_key' =&gt; API_KEY,

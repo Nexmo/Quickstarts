@@ -72,6 +72,8 @@
                         <h4>Verify &amp; Number Inisght</h4>
                         <ul class="list-unstyled">
                                 <li ><a href="/Quickstarts/./verify/verify/">Verifying a Phone Number</a> <span>»</span></li>
+                                <li ><a href="/Quickstarts/./verify/control/">Controlling a Verification</a> <span>»</span></li>
+                                <li ><a href="/Quickstarts/./verify/search/">Checking a Verification Status</a> <span>»</span></li>
                                 <li ><a href="/Quickstarts/./ni/ni/">Getting Number Information</a> <span>»</span></li>
                         </ul>
                     </div>
@@ -96,11 +98,11 @@ document.</p>
 <p>Send the request to <code>https://rest.nexmo.com/call/json</code> (or <code>xml</code> if that's your preference).</p>
 <div class="code-snippets">
     <ul class="nav nav-tabs">
-                <li role="presentation" class="cURL552c55432c520 active"><a href="#cURL552c55432c520" aria-controls="cURL552c55432c520" role="tab" data-toggle="tab">cURL</a></li>
-                <li role="presentation" class="PHP552c55432c520"><a href="#PHP552c55432c520" aria-controls="PHP552c55432c520" role="tab" data-toggle="tab">PHP</a></li>
+                <li role="presentation" class="cURL55afbcf50147b active"><a href="#cURL55afbcf50147b" aria-controls="cURL55afbcf50147b" role="tab" data-toggle="tab">cURL</a></li>
+                <li role="presentation" class="PHP55afbcf50147b"><a href="#PHP55afbcf50147b" aria-controls="PHP55afbcf50147b" role="tab" data-toggle="tab">PHP</a></li>
             </ul>
     <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="cURL552c55432c520">
+                <div role="tabpanel" class="tab-pane active" id="cURL55afbcf50147b">
             <pre><code>#!/bin/bash
 curl 'https://rest.nexmo.com/call/json' \
 -d api_key=API_KEY \
@@ -109,7 +111,7 @@ curl 'https://rest.nexmo.com/call/json' \
 --data-urlencode &quot;answer_url=http://example.com/outbound.vxml&quot; \
 -d from=NEXMO_NUMBER</code></pre>
         </div>
-                <div role="tabpanel" class="tab-pane " id="PHP552c55432c520">
+                <div role="tabpanel" class="tab-pane " id="PHP55afbcf50147b">
             <pre><code>&lt;?php
 $url = 'https://rest.nexmo.com/call/json?' . http_build_query(array(
         'api_key' =&gt; API_KEY,
@@ -132,10 +134,10 @@ $response = curl_exec($ch);</code></pre>
 For each callback URL the desired HTTP method may be defined with a matching <code>_method</code> parameter.</p>
 <div class="code-snippets">
     <ul class="nav nav-tabs">
-                <li role="presentation" class="PHP552c55432ca68 active"><a href="#PHP552c55432ca68" aria-controls="PHP552c55432ca68" role="tab" data-toggle="tab">PHP</a></li>
+                <li role="presentation" class="PHP55afbcf501a6e active"><a href="#PHP55afbcf501a6e" aria-controls="PHP55afbcf501a6e" role="tab" data-toggle="tab">PHP</a></li>
             </ul>
     <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="PHP552c55432ca68">
+                <div role="tabpanel" class="tab-pane active" id="PHP55afbcf501a6e">
             <pre><code>&lt;?php
 $request = array_merge($_GET, $_POST);
 error_log('call id: ' . $request['call-id']);

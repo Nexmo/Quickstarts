@@ -71,6 +71,8 @@
                         <h4>Verify &amp; Number Inisght</h4>
                         <ul class="list-unstyled">
                                 <li ><a href="/Quickstarts/./verify/verify/">Verifying a Phone Number</a> <span>»</span></li>
+                                <li ><a href="/Quickstarts/./verify/control/">Controlling a Verification</a> <span>»</span></li>
+                                <li ><a href="/Quickstarts/./verify/search/">Checking a Verification Status</a> <span>»</span></li>
                                 <li ><a href="/Quickstarts/./ni/ni/">Getting Number Information</a> <span>»</span></li>
                         </ul>
                     </div>
@@ -93,11 +95,11 @@
 <code>from</code>, and <code>text</code> parameters stay the same.</p>
 <div class="code-snippets">
     <ul class="nav nav-tabs">
-                <li role="presentation" class="cURL552c5542dfded active"><a href="#cURL552c5542dfded" aria-controls="cURL552c5542dfded" role="tab" data-toggle="tab">cURL</a></li>
-                <li role="presentation" class="PHP552c5542dfded"><a href="#PHP552c5542dfded" aria-controls="PHP552c5542dfded" role="tab" data-toggle="tab">PHP</a></li>
+                <li role="presentation" class="cURL55afbcf4b23a1 active"><a href="#cURL55afbcf4b23a1" aria-controls="cURL55afbcf4b23a1" role="tab" data-toggle="tab">cURL</a></li>
+                <li role="presentation" class="PHP55afbcf4b23a1"><a href="#PHP55afbcf4b23a1" aria-controls="PHP55afbcf4b23a1" role="tab" data-toggle="tab">PHP</a></li>
             </ul>
     <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="cURL552c5542dfded">
+                <div role="tabpanel" class="tab-pane active" id="cURL55afbcf4b23a1">
             <pre><code>#!/bin/bash
 curl 'https://api.nexmo.com/tts/json' \
 -d api_key=API_KEY \
@@ -107,7 +109,7 @@ curl 'https://api.nexmo.com/tts/json' \
 -d from=NEXMO_NUMBER
 </code></pre>
         </div>
-                <div role="tabpanel" class="tab-pane " id="PHP552c5542dfded">
+                <div role="tabpanel" class="tab-pane " id="PHP55afbcf4b23a1">
             <pre><code>&lt;?php
 $params = [
     'api_key' =&gt; API_KEY,

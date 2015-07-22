@@ -4,7 +4,7 @@
     <!-- Meta Information -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>Nexmo Quickstarts - VoiceXML: Transferring a Call </title>
+    <title>Nexmo Quickstarts - Quickstart: Getting a Verification Status </title>
 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="/Quickstarts/css/bootstrap.min.css">
@@ -30,11 +30,10 @@
     <div class="container-fluid">
         <div class="row text-center header-title">
             <div class="col-md-12">
-                <h2 id='title'>  VoiceXML: Transferring a Call </h2>
-                <!-- <div class="lead">Along with prompting a caller for information, VoiceXML also allows you transfer a ongoing call to an different number 
-or SIP address. And like [`&lt;field&gt;`][field] and [`&lt;record&gt;`][record] the `&lt;transfer&gt;` element behaves like other 
-`&lt;form&gt;` elements, the name of the element holding the end result of the transfer. That result could be `noanswer`, 
-`busy`, or a [few other outcomes][results].</div> -->
+                <h2 id='title'>  Quickstart: Getting a Verification Status </h2>
+                <!-- <div class="lead">In most cases the success of the verification process is determined when the [user provided code is checked][verify]. 
+However, it is possible to check the status of a verification during the process, as well as after the process has 
+completed.</div> -->
             </div>
         </div>
     </div>
@@ -65,7 +64,7 @@ or SIP address. And like [`&lt;field&gt;`][field] and [`&lt;record&gt;`][record]
                         <ul class="list-unstyled">
                                 <li ><a href="/Quickstarts/./vxml/input/">Prompting for Input</a> <span>»</span></li>
                                 <li ><a href="/Quickstarts/./vxml/recording/">Recording Audio</a> <span>»</span></li>
-                                <li class="current"><a href="/Quickstarts/./vxml/transfer/">Transferring a Call</a> <span>»</span></li>
+                                <li ><a href="/Quickstarts/./vxml/transfer/">Transferring a Call</a> <span>»</span></li>
                                 <li ><a href="/Quickstarts/./vxml/multi/">Multiple Items and Forms</a> <span>»</span></li>
                                 <li ><a href="/Quickstarts/./vxml/errors/">Error Events</a> <span>»</span></li>
                         </ul>
@@ -75,7 +74,7 @@ or SIP address. And like [`&lt;field&gt;`][field] and [`&lt;record&gt;`][record]
                         <ul class="list-unstyled">
                                 <li ><a href="/Quickstarts/./verify/verify/">Verifying a Phone Number</a> <span>»</span></li>
                                 <li ><a href="/Quickstarts/./verify/control/">Controlling a Verification</a> <span>»</span></li>
-                                <li ><a href="/Quickstarts/./verify/search/">Checking a Verification Status</a> <span>»</span></li>
+                                <li class="current"><a href="/Quickstarts/./verify/search/">Checking a Verification Status</a> <span>»</span></li>
                                 <li ><a href="/Quickstarts/./ni/ni/">Getting Number Information</a> <span>»</span></li>
                         </ul>
                     </div>
@@ -85,96 +84,117 @@ or SIP address. And like [`&lt;field&gt;`][field] and [`&lt;record&gt;`][record]
     <div class="col-md-9">
       <section class="body-content">
         <div class="row">
-          <div class="col-md-12"><p>Along with prompting a caller for information, VoiceXML also allows you transfer a ongoing call to an different number
-or SIP address. And like <a href="../input"><code>&lt;field&gt;</code></a> and <a href="../record"><code>&lt;record&gt;</code></a> the <code>&lt;transfer&gt;</code> element behaves like other
-<code>&lt;form&gt;</code> elements, the name of the element holding the end result of the transfer. That result could be <code>noanswer</code>,
-<code>busy</code>, or a <a href="http://www.w3.org/TR/voicexml20/#dml2.3.7.2" class="external-link">few other outcomes</a>.</p>
-<p>The destination is the <code>dest</code> attribute of the transfer element, prefixed with either <code>sip:</code> or <code>tel:</code> depending on the
-destination type. You'll also need to set the <code>bridge</code> attribute to true. This allows the VoiceXML document to result
-after the transfer ends, as well as allow grammar to be active during the call.</p>
-<p>You can set the timeout for the transfer - the time given the other party to answer - using <code>connecttimeout</code>, and
-<code>maxtime</code> can be used to set how long the two calls can connected.</p>
-<p>Like other <code>&lt;form&gt;</code> elements, <code>&lt;prompt&gt;</code> can be nested to notify the user of the transfer, and <code>&lt;grammar&gt;</code> can be used
-to allow the transfer to be ended with a DTMF or a spoken command.</p>
-<pre><code>&lt;transfer name=&quot;result&quot; dest=&quot;tel:+14158058810&quot; bridge=&quot;true&quot;&gt;
-    &lt;prompt&gt;Please wait while we transfer you.&lt;/prompt&gt;
-    &lt;grammar xml:lang=&quot;en-US&quot; root = &quot;TOPLEVEL&quot; mode=&quot;voice&quot;&gt;
-        &lt;rule id=&quot;TOPLEVEL&quot; scope=&quot;public&quot;&gt;
-            &lt;one-of&gt;
-                &lt;item&gt; disconnect &lt;/item&gt;
-            &lt;/one-of&gt;
-        &lt;/rule&gt;
-    &lt;/grammar&gt;
-&lt;/transfer&gt;
-</code></pre>
-<p>Once the transfer is complete, we can use the result value to drive some logic, and let the caller know what happened
-(assuming they didn't end the transfer by hanging up). When nested in a <code>&lt;form&gt;</code>, the <code>&lt;filled&gt;</code> element is executed
-once all the child items have a value. Adding a set of <code>&lt;if&gt;</code>, <code>&lt;elseif&gt;</code>, and <code>&lt;else&gt;</code> elements allows us to change
-the flow based on the transfer's value.</p>
-<pre><code>       &lt;filled&gt;
-           &lt;if cond=&quot;result == 'busy'&quot;&gt;
-               &lt;prompt&gt;Sorry, they're busy.&lt;/prompt&gt;
-           &lt;elseif cond=&quot;result == 'noanswer'&quot; /&gt;
-               &lt;prompt&gt;Sorry, they didn't answer.&lt;/prompt&gt;
-           &lt;else /&gt;
-               &lt;prompt&gt;You spoke for &lt;value expr=&quot;result$.duration&quot; /&gt; seconds.&lt;/prompt&gt;
-           &lt;/if&gt;
-           &lt;if cond=&quot;result$.inputmode == 'voice'&quot;&gt;
-               You ended the call by saying, &lt;value expr=&quot;result$.utterance&quot; /&gt;.
-           &lt;/if&gt;
-       &lt;/filled&gt;
-</code></pre>
-<p>Along with the outcome of the transfer, there are a few 'shadow variables' providing things like call duration, and how
-the call was ended. The shadow variable are accessed by appending <code>$</code> to the element's name, then using dot notation to
-reference the specific variable. Instead of using prompts to notify the user of the transfer status, <code>&lt;submit&gt;</code> could
-be used to send that data to a server for logging.</p>
+          <div class="col-md-12"><p>In most cases the success of the verification process is determined when the <a href="../verify/">user provided code is checked</a>.
+However, it is possible to check the status of a verification during the process, as well as after the process has
+completed.</p>
+<p>You'll need the verify <code>request_id</code>, which is also what would be used to <a href="../verify/">complete the verification process</a>.
+Pass that along with your <code>api_key</code> and <code>api_secret</code> to <code>https://api.nexmo.com/verify/search/json</code> (or <code>/xml</code>).</p>
 <div class="code-snippets">
     <ul class="nav nav-tabs">
-                <li role="presentation" class="Full VXML55afbcf5a5c49 active"><a href="#Full VXML55afbcf5a5c49" aria-controls="Full VXML55afbcf5a5c49" role="tab" data-toggle="tab">Full VXML</a></li>
+                <li role="presentation" class="cURL55afbcf69c24c active"><a href="#cURL55afbcf69c24c" aria-controls="cURL55afbcf69c24c" role="tab" data-toggle="tab">cURL</a></li>
+                <li role="presentation" class="PHP55afbcf69c24c"><a href="#PHP55afbcf69c24c" aria-controls="PHP55afbcf69c24c" role="tab" data-toggle="tab">PHP</a></li>
+                <li role="presentation" class="Python55afbcf69c24c"><a href="#Python55afbcf69c24c" aria-controls="Python55afbcf69c24c" role="tab" data-toggle="tab">Python</a></li>
+                <li role="presentation" class="Ruby55afbcf69c24c"><a href="#Ruby55afbcf69c24c" aria-controls="Ruby55afbcf69c24c" role="tab" data-toggle="tab">Ruby</a></li>
+                <li role="presentation" class="NodeJS55afbcf69c24c"><a href="#NodeJS55afbcf69c24c" aria-controls="NodeJS55afbcf69c24c" role="tab" data-toggle="tab">NodeJS</a></li>
             </ul>
     <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="Full VXML55afbcf5a5c49">
-            <pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;vxml version = &quot;2.1&quot;&gt;
-    &lt;form&gt;
-        &lt;transfer name=&quot;result&quot; dest=&quot;tel:+14158058810&quot; bridge=&quot;true&quot;&gt;
-            &lt;prompt&gt;Please wait while we transfer you.&lt;/prompt&gt;
-            &lt;grammar xml:lang=&quot;en-US&quot; root = &quot;TOPLEVEL&quot; mode=&quot;voice&quot;&gt;
-                &lt;rule id=&quot;TOPLEVEL&quot; scope=&quot;public&quot;&gt;
-                    &lt;one-of&gt;
-                        &lt;item&gt; disconnect &lt;/item&gt;
-                    &lt;/one-of&gt;
-                &lt;/rule&gt;
-            &lt;/grammar&gt;
-        &lt;/transfer&gt;
-        &lt;filled&gt;
-            &lt;if cond=&quot;result == 'busy'&quot;&gt;
-                &lt;prompt&gt;Sorry, they're busy.&lt;/prompt&gt;
-            &lt;elseif cond=&quot;result == 'noanswer'&quot; /&gt;
-                &lt;prompt&gt;Sorry, they didn't answer.&lt;/prompt&gt;
-            &lt;else /&gt;
-                &lt;prompt&gt;You spoke for &lt;value expr=&quot;result$.duration&quot; /&gt; seconds.&lt;/prompt&gt;
-            &lt;/if&gt;
+                <div role="tabpanel" class="tab-pane active" id="cURL55afbcf69c24c">
+            <pre><code>#!/bin/bash
+curl 'https://api.nexmo.com/verify/search/json' \
+-d api_key=API_KEY \
+-d api_secret=API_SECRET \
+-d request_id=a7d922f6a00442ee8e2f2a7646cb2a6d</code></pre>
+        </div>
+                <div role="tabpanel" class="tab-pane " id="PHP55afbcf69c24c">
+            <pre><code>&lt;?php
+$url = 'https://api.nexmo.com/verify/search/json?' . http_build_query([
+        'api_key' =&gt; API_KEY,
+        'api_secret' =&gt; API_SECRET,
+        'request_id' =&gt; '1178e48a940a485eaca317a1237279e5'
+    ]);
 
-            &lt;if cond=&quot;result$.inputmode == 'voice'&quot;&gt;
-                You ended the call by saying, &lt;value expr=&quot;result$.utterance&quot; /&gt;.
-            &lt;/if&gt;
-        &lt;/filled&gt;
-        &lt;block&gt;
-            Thanks for using the transfer element.
-        &lt;/block&gt;
-    &lt;/form&gt;
-&lt;/vxml&gt;</code></pre>
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$response = curl_exec($ch);
+error_log($response);</code></pre>
+        </div>
+                <div role="tabpanel" class="tab-pane " id="Python55afbcf69c24c">
+            <pre><code>import urllib
+
+params = {
+    'api_key': API_KEY,
+    'api_secret': API_SECRET,
+    'request_id': 'd945c3655d9043c0b0b3941e1144f258',
+}
+
+url = 'https://api.nexmo.com/verify/search/json?' + urllib.urlencode(params)
+
+response = urllib.urlopen(url)
+print response.read()</code></pre>
+        </div>
+                <div role="tabpanel" class="tab-pane " id="Ruby55afbcf69c24c">
+            <pre><code>require &quot;net/http&quot;
+require &quot;uri&quot;
+
+uri = URI.parse(&quot;https://api.nexmo.com/verify/search/json&quot;)
+params = {
+    &quot;api_key&quot; =&gt; API_KEY,
+    &quot;api_secret&quot; =&gt; API_SECRET,
+    &quot;request_id&quot; =&gt; &quot;31d724da3286461196a82ef3eec62d2a&quot;,
+    &quot;code&quot; =&gt; &quot;4345&quot;
+}
+
+response = Net::HTTP.post_form(uri, params)
+
+puts response.body</code></pre>
+        </div>
+                <div role="tabpanel" class="tab-pane " id="NodeJS55afbcf69c24c">
+            <pre><code>var https = require('https');
+
+var data = JSON.stringify({
+  api_key: API_KEY,
+  api_secret: API_SECRET,
+  request_id: '1b770a645f4b4c9fa5fddd21dcefe0d4',
+});
+
+var options = {
+  host: 'api.nexmo.com',
+  path: '/verify/search/json',
+  port: 443,
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'Content-Length': Buffer.byteLength(data)
+  }
+};
+
+var req = https.request(options);
+
+req.write(data);
+req.end();
+
+var responseData = '';
+req.on('response', function(res){
+  res.on('data', function(chunk){
+    responseData += chunk;
+  });
+  
+  res.on('end', function(){
+    console.log(JSON.parse(responseData));
+  });
+});</code></pre>
         </div>
             </div>
 </div>
-<p>Want to dig a little deeper into VoiceXML? Check out the W3C's documentation of <a href="http://www.w3.org/TR/voicexml20/#dml2.3.7" class="external-link"><code>&lt;transfer&gt;</code></a>,
-<a href="http://www.w3.org/TR/voicexml20/#dml2.4" class="external-link"><code>&lt;filled&gt;</code></a>, <a href="http://www.w3.org/TR/voicexml20/#dml5.3.4" class="external-link"><code>&lt;if&gt;</code></a>, and <a href="http://www.w3.org/TR/voicexml20/#dml2.3" class="external-link">shadow variables</a>.</p>
+<p>Not only will the response include the current status of the process, but will also include information about the last
+time a code was sent, what codes have been checked, and the outcome of those checks.</p>
+<p>It's also possible to check multiple verifications by using the <code>request_ids</code> parameter instead of <code>request_id</code>.</p>
+<p>Find example responses, and a full list of parameters in the <a href="https://docs.nexmo.com/index.php/verify/control">API documentation</a>.</p>
 </div>
         </div>
         <div class="row next">
           <div class="col-md-12">
-            <a href="/Quickstarts/./vxml/multi/" class="btn"><span>Next</span>: Multiple Items and Forms <span class="glyphicon glyphicon-play"></span></a>
+            <a href="/Quickstarts/./ni/ni/" class="btn"><span>Next</span>: Getting Number Information <span class="glyphicon glyphicon-play"></span></a>
           </div>
         </div>
       </section>
