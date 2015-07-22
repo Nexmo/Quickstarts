@@ -12,7 +12,9 @@ identify . Be sure the `number` is in international format.
 
 Make a call to `https://api.nexmo.com/verify/json` (or `/xml` if that's your preference), with those parameters, along 
 with your `api_key` and `api_secret`. You can optionally select a `code_length` of 4 or 6 characters, and a language 
-using the `lg` parameter.
+using the `lg` parameter. Should you want to change how long the code is valid, or how fast it's resent you can use the
+`pin_expiry` and `next_event_wait` parameters. It's also possible to restrict the verification to a mobile or a landline
+by using the `require_type` parameter. Find all the parameters in [the documentation][request].
 
 Example: [cURL](./curl/send.sh) [PHP](./php/send.php) [Python](./python/send.py) [Ruby](./ruby/send.rb) [NodeJS](./node/send.js)
 
@@ -39,4 +41,4 @@ Check out the [API documentation][docs] for more on the Verify API.
 
 [codes]: https://docs.nexmo.com/index.php/verify/search#verify_return_code
 [docs]: https://docs.nexmo.com/index.php/verify
-
+[request]: https://docs.nexmo.com/index.php/verify/verify
