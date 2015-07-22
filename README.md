@@ -24,4 +24,6 @@
 
 ## Verify & Number Inisght
 - [Verifying a Phone Number](./verify/verify)
+- [Controlling a Verification](./verify/control)
+- [Checking a Verification Status](./verify/search)
 - [Getting Number Information](./ni/ni)
