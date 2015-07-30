@@ -1,5 +1,7 @@
 # Nexmo Quickstarts
 
+[![Join the chat at https://gitter.im/Nexmo/Quickstarts](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Nexmo/Quickstarts?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [All Videos](https://vimeo.com/album/2978275) ([Autoplay](https://vimeo.com/couchmode/album/2978275/sort:preset/98321044))
 
 ## SMS
