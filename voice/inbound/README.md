@@ -30,4 +30,4 @@ list of parameters and status responses in the [API documentation][4].
 [1]: https://dashboard.nexmo.com/private/numbers
 [2]: http://www.w3.org/TR/voicexml20/
 [3]: http://www.w3.org/Voice/Guide/
-[4]: https://docs.nexmo.com/index.php/voice-api/call
+[4]: https://docs.nexmo.com/api-ref/voice-api/call

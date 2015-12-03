@@ -26,5 +26,5 @@ Find a complete list of status parameters in the [API documentation][2]. And tak
 [Inbound Call Quickstart][3] for a brief introduction to Voice XML.
 
 [1]: ./../../tts/
-[2]: https://docs.nexmo.com/index.php/voice-api/call
+[2]: https://docs.nexmo.com/api-ref/voice-api/call
 [3]: ./../inbound/

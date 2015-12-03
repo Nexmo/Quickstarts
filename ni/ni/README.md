@@ -24,5 +24,5 @@ Take a look at the full [Number Insight documentation][docs] for a full list of 
 parameters.
 
 [docs]: https://docs.nexmo.com/index.php/number-insight
-[features]: https://docs.nexmo.com/index.php/number-insight/request
-[response]: https://docs.nexmo.com/index.php/number-insight/response
+[features]: https://docs.nexmo.com/api-ref/number-insight/request
+[response]: https://docs.nexmo.com/api-ref/number-insight/response

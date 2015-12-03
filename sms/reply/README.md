@@ -19,5 +19,5 @@ Find more about [sending messages][3] and [handling inbound messages][4] in the 
 
 [1]: ../send/
 [2]: ../receive/
-[3]: https://docs.nexmo.com/index.php/sms-api/send-message
-[4]: https://docs.nexmo.com/index.php/sms-api/handle-inbound-message
+[3]: https://docs.nexmo.com/api-ref/sms-api/request
+[4]: https://docs.nexmo.com/api-ref/sms-api/handle-inbound-message

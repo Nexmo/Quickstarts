@@ -36,6 +36,6 @@ If the status is `0`, check your phone. You've just sent your first SMS message 
 
 Check out the [API documentation][2] for more on sending SMS messages.
 
-[1]: https://help.nexmo.com/categories/20079687-Country-Specifics
-[2]: https://docs.nexmo.com/index.php/sms-api/send-message
+[1]: https://help.nexmo.com/hc/en-us/sections/200622473-Country-Specific-Features-and-Restrictions
+[2]: https://docs.nexmo.com/api-ref/sms-api
 [curl]: ./curl/send.sh

@@ -24,4 +24,4 @@ Example: [PHP](./php/receive.php)
 Check out the [API documentation][2] for more on receiving SMS messages.
 
 [1]: https://dashboard.nexmo.com/private/numbers
-[2]: https://docs.nexmo.com/index.php/sms-api/handle-inbound-message
+[2]: https://docs.nexmo.com/api-ref/sms-api/handle-inbound-message

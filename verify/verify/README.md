@@ -39,6 +39,6 @@ until the process times out, or you reach the maximum number of attempts.
 
 Check out the [API documentation][docs] for more on the Verify API.
 
-[codes]: https://docs.nexmo.com/index.php/verify/search#verify_return_code
-[docs]: https://docs.nexmo.com/index.php/verify
-[request]: https://docs.nexmo.com/index.php/verify/verify
+[codes]: https://docs.nexmo.com/api-ref/verify/verify-response-codes
+[docs]: https://docs.nexmo.com/api-ref/verify
+[request]: https://docs.nexmo.com/api-ref/verify/verify

@@ -17,4 +17,4 @@ It's also possible to check multiple verifications by using the `request_ids` pa
 Find example responses, and a full list of parameters in the [API documentation][docs].
 
 [verify]: ../verify/
-[docs]: https://docs.nexmo.com/index.php/verify/control
+[docs]: https://docs.nexmo.com/api-ref/verify/control

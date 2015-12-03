@@ -22,4 +22,4 @@ process would normally make.
 Check out the [API documentation][docs] for more on the Verify API.
 
 [verify]: ../verify/
-[docs]: https://docs.nexmo.com/index.php/verify/control
+[docs]: https://docs.nexmo.com/api-ref/verify/control
