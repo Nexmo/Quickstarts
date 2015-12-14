@@ -96,10 +96,10 @@ haven't yet, you may want to visit the Quickstarts for <a href="../send/">sendin
 <p>To send a reply, send an outbound message using the inbound <code>msisdn</code> as the <code>to</code>, and the inbound <code>to</code> as the <code>from</code>.</p>
 <div class="code-snippets">
     <ul class="nav nav-tabs">
-                <li role="presentation" class="PHP55afbcf488e5d active"><a href="#PHP55afbcf488e5d" aria-controls="PHP55afbcf488e5d" role="tab" data-toggle="tab">PHP</a></li>
+                <li role="presentation" class="PHP566f0779b168a active"><a href="#PHP566f0779b168a" aria-controls="PHP566f0779b168a" role="tab" data-toggle="tab">PHP</a></li>
             </ul>
     <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="PHP55afbcf488e5d">
+                <div role="tabpanel" class="tab-pane active" id="PHP566f0779b168a">
             <pre><code>&lt;?php
 // work with get or post
 $request = array_merge($_GET, $_POST);
@@ -129,7 +129,7 @@ $response = curl_exec($ch);</code></pre>
 <p>Flipping the roles of sender and receiver effectively creates a reply; however, it's important to note that SMS messages
 have no concept of threads. There's no way to determine if an inbound message is a reply to a previous message, or a
 completely new message, unattached to the context of past messages.</p>
-<p>Find more about <a href="https://docs.nexmo.com/index.php/sms-api/send-message">sending messages</a> and <a href="https://docs.nexmo.com/index.php/sms-api/handle-inbound-message">handling inbound messages</a> in the API documentation.</p>
+<p>Find more about <a href="https://docs.nexmo.com/api-ref/sms-api/request">sending messages</a> and <a href="https://docs.nexmo.com/api-ref/sms-api/handle-inbound-message">handling inbound messages</a> in the API documentation.</p>
 </div>
         </div>
       </section>

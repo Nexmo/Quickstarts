@@ -90,16 +90,18 @@
         </div>
         <div class="row">
           <div class="col-md-12"><p>When sending an SMS isn't the optimal solution, sending a voice message is just as easy with our Text To Speech API.</p>
-<p>If you've already sent an SMS, switching to TTS is simple. The only change you need to make is swapping the API url from
-<code>https://rest.nexmo.com/sms/json</code> to  <code>https://api.nexmo.com/tts/json</code> (or <code>xml</code> if that's your preference). The <code>to</code>,
-<code>from</code>, and <code>text</code> parameters stay the same.</p>
+<p>If you've already sent an SMS, switching to TTS is simple. Swap the API url from:</p>
+<p><code>https://rest.nexmo.com/sms/json</code></p>
+<p>To:</p>
+<p><code>https://api.nexmo.com/tts/json</code></p>
+<p>The <code>to</code>, <code>from</code>, and <code>text</code> parameters stay the same.</p>
 <div class="code-snippets">
     <ul class="nav nav-tabs">
-                <li role="presentation" class="cURL55afbcf4b23a1 active"><a href="#cURL55afbcf4b23a1" aria-controls="cURL55afbcf4b23a1" role="tab" data-toggle="tab">cURL</a></li>
-                <li role="presentation" class="PHP55afbcf4b23a1"><a href="#PHP55afbcf4b23a1" aria-controls="PHP55afbcf4b23a1" role="tab" data-toggle="tab">PHP</a></li>
+                <li role="presentation" class="cURL566f0779d489a active"><a href="#cURL566f0779d489a" aria-controls="cURL566f0779d489a" role="tab" data-toggle="tab">cURL</a></li>
+                <li role="presentation" class="PHP566f0779d489a"><a href="#PHP566f0779d489a" aria-controls="PHP566f0779d489a" role="tab" data-toggle="tab">PHP</a></li>
             </ul>
     <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="cURL55afbcf4b23a1">
+                <div role="tabpanel" class="tab-pane active" id="cURL566f0779d489a">
             <pre><code>#!/bin/bash
 curl 'https://api.nexmo.com/tts/json' \
 -d api_key=API_KEY \
@@ -109,7 +111,7 @@ curl 'https://api.nexmo.com/tts/json' \
 -d from=NEXMO_NUMBER
 </code></pre>
         </div>
-                <div role="tabpanel" class="tab-pane " id="PHP55afbcf4b23a1">
+                <div role="tabpanel" class="tab-pane " id="PHP566f0779d489a">
             <pre><code>&lt;?php
 $params = [
     'api_key' =&gt; API_KEY,
@@ -140,7 +142,7 @@ receipt available when sending an SMS message.</p>
 <p>Finally, you're not limited to text to speech, passing a link to an audio file will play that file. Use the format
 <code>&lt;audio src='http://example.com/hello.mp3'/&gt;</code>, which allows mixing TTS and multiple audio prompts to create complex
 messages.</p>
-<p>Check out the API documentation for more on the <a href="https://docs.nexmo.com/index.php/voice-api/text-to-speech">TTS API</a> and how to <a href="https://docs.nexmo.com/index.php/voice-api/text-to-speech#tts_tips">control the speech engine</a>.</p>
+<p>Check out the API documentation for more on the <a href="https://docs.nexmo.com/api-ref/voice-api/text-to-speech">TTS API</a> and how to <a href="https://docs.nexmo.com/api-ref/voice-api/tts-hints">control the speech engine</a>.</p>
 </div>
         </div>
         <div class="row next">

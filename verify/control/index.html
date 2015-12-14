@@ -95,14 +95,14 @@ parameter.</p>
 delivery of the code right away.</p>
 <div class="code-snippets">
     <ul class="nav nav-tabs">
-                <li role="presentation" class="cURL55afbcf682a2b active"><a href="#cURL55afbcf682a2b" aria-controls="cURL55afbcf682a2b" role="tab" data-toggle="tab">cURL</a></li>
-                <li role="presentation" class="PHP55afbcf682a2b"><a href="#PHP55afbcf682a2b" aria-controls="PHP55afbcf682a2b" role="tab" data-toggle="tab">PHP</a></li>
-                <li role="presentation" class="Python55afbcf682a2b"><a href="#Python55afbcf682a2b" aria-controls="Python55afbcf682a2b" role="tab" data-toggle="tab">Python</a></li>
-                <li role="presentation" class="Ruby55afbcf682a2b"><a href="#Ruby55afbcf682a2b" aria-controls="Ruby55afbcf682a2b" role="tab" data-toggle="tab">Ruby</a></li>
-                <li role="presentation" class="NodeJS55afbcf682a2b"><a href="#NodeJS55afbcf682a2b" aria-controls="NodeJS55afbcf682a2b" role="tab" data-toggle="tab">NodeJS</a></li>
+                <li role="presentation" class="cURL566f077b5d4d6 active"><a href="#cURL566f077b5d4d6" aria-controls="cURL566f077b5d4d6" role="tab" data-toggle="tab">cURL</a></li>
+                <li role="presentation" class="PHP566f077b5d4d6"><a href="#PHP566f077b5d4d6" aria-controls="PHP566f077b5d4d6" role="tab" data-toggle="tab">PHP</a></li>
+                <li role="presentation" class="Python566f077b5d4d6"><a href="#Python566f077b5d4d6" aria-controls="Python566f077b5d4d6" role="tab" data-toggle="tab">Python</a></li>
+                <li role="presentation" class="Ruby566f077b5d4d6"><a href="#Ruby566f077b5d4d6" aria-controls="Ruby566f077b5d4d6" role="tab" data-toggle="tab">Ruby</a></li>
+                <li role="presentation" class="NodeJS566f077b5d4d6"><a href="#NodeJS566f077b5d4d6" aria-controls="NodeJS566f077b5d4d6" role="tab" data-toggle="tab">NodeJS</a></li>
             </ul>
     <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="cURL55afbcf682a2b">
+                <div role="tabpanel" class="tab-pane active" id="cURL566f077b5d4d6">
             <pre><code>#!/bin/bash
 curl 'https://api.nexmo.com/verify/control/json' \
 -d api_key=API_KEY \
@@ -110,7 +110,7 @@ curl 'https://api.nexmo.com/verify/control/json' \
 -d request_id=039368b9e6a24ee29492a6ea63c74202 \
 -d cmd=trigger_next_event</code></pre>
         </div>
-                <div role="tabpanel" class="tab-pane " id="PHP55afbcf682a2b">
+                <div role="tabpanel" class="tab-pane " id="PHP566f077b5d4d6">
             <pre><code>&lt;?php
 $url = 'https://api.nexmo.com/verify/control/json?' . http_build_query([
         'api_key' =&gt; API_KEY,
@@ -124,7 +124,7 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $response = curl_exec($ch);
 error_log($response);</code></pre>
         </div>
-                <div role="tabpanel" class="tab-pane " id="Python55afbcf682a2b">
+                <div role="tabpanel" class="tab-pane " id="Python566f077b5d4d6">
             <pre><code>import urllib
 
 params = {
@@ -139,7 +139,7 @@ url = 'https://api.nexmo.com/verify/control/json?' + urllib.urlencode(params)
 response = urllib.urlopen(url)
 print response.read()</code></pre>
         </div>
-                <div role="tabpanel" class="tab-pane " id="Ruby55afbcf682a2b">
+                <div role="tabpanel" class="tab-pane " id="Ruby566f077b5d4d6">
             <pre><code>require &quot;net/http&quot;
 require &quot;uri&quot;
 
@@ -156,7 +156,7 @@ response = Net::HTTP.post_form(uri, params)
 
 puts response.body</code></pre>
         </div>
-                <div role="tabpanel" class="tab-pane " id="NodeJS55afbcf682a2b">
+                <div role="tabpanel" class="tab-pane " id="NodeJS566f077b5d4d6">
             <pre><code>var https = require('https');
 
 var data = JSON.stringify({
@@ -199,7 +199,7 @@ req.on('response', function(res){
 important to note that a verification cannot be canceled if it's already expired, or if the command is issued too
 close to the start of the verification. It's also not possible to trigger more retry attempts than the verification
 process would normally make.</p>
-<p>Check out the <a href="https://docs.nexmo.com/index.php/verify/control">API documentation</a> for more on the Verify API.</p>
+<p>Check out the <a href="https://docs.nexmo.com/api-ref/verify/control">API documentation</a> for more on the Verify API.</p>
 </div>
         </div>
         <div class="row next">

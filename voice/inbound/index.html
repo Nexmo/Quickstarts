@@ -100,11 +100,11 @@ data. But unlike SMS requests, Nexmo expects the response to contain a valid Voi
 <p>Voice XML (VXML) is to a phone what HTML is to a browser.</p>
 <div class="code-snippets">
     <ul class="nav nav-tabs">
-                <li role="presentation" class="VXML55afbcf4d8571 active"><a href="#VXML55afbcf4d8571" aria-controls="VXML55afbcf4d8571" role="tab" data-toggle="tab">VXML</a></li>
-                <li role="presentation" class="PHP55afbcf4d8571"><a href="#PHP55afbcf4d8571" aria-controls="PHP55afbcf4d8571" role="tab" data-toggle="tab">PHP</a></li>
+                <li role="presentation" class="VXML566f0779f4178 active"><a href="#VXML566f0779f4178" aria-controls="VXML566f0779f4178" role="tab" data-toggle="tab">VXML</a></li>
+                <li role="presentation" class="PHP566f0779f4178"><a href="#PHP566f0779f4178" aria-controls="PHP566f0779f4178" role="tab" data-toggle="tab">PHP</a></li>
             </ul>
     <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="VXML55afbcf4d8571">
+                <div role="tabpanel" class="tab-pane active" id="VXML566f0779f4178">
             <pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;vxml version=&quot;2.1&quot;&gt;
     &lt;form&gt;
@@ -114,7 +114,7 @@ data. But unlike SMS requests, Nexmo expects the response to contain a valid Voi
     &lt;/form&gt;
 &lt;/vxml&gt;</code></pre>
         </div>
-                <div role="tabpanel" class="tab-pane " id="PHP55afbcf4d8571">
+                <div role="tabpanel" class="tab-pane " id="PHP566f0779f4178">
             <pre><code>&lt;?php
 // accept both query string and post
 $request = array_merge($_GET, $_POST);
@@ -137,7 +137,7 @@ prompting the user for data, validating or confirming that data, recording audio
 <p>While the initial request includes data like the caller's phone number, much like an HTML form, VXML documents can send
 data back to your application. And your application can respond with a new VXML document, continuing the call.</p>
 <p>Learn more about VoiceXML from the <a href="http://www.w3.org/TR/voicexml20/" class="external-link">W3C specification</a> and the <a href="http://www.w3.org/Voice/Guide/" class="external-link">W3C's Getting Started Guide</a>. Find the complete
-list of parameters and status responses in the <a href="https://docs.nexmo.com/index.php/voice-api/call">API documentation</a>.</p>
+list of parameters and status responses in the <a href="https://docs.nexmo.com/api-ref/voice-api/call">API documentation</a>.</p>
 </div>
         </div>
         <div class="row next">

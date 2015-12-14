@@ -100,16 +100,16 @@ if you've set the <code>Content-Type</code> header to <code>application/json</co
 of the message.</p>
 <p>Make sure the <code>to</code> is in international format. If you're in the US or Canada, the <code>from</code> will have to be an inbound
 number that's part of your account. Carrier and country specific restrictions on the sender id (the <code>from</code>) can be
-<a href="https://help.nexmo.com/categories/20079687-Country-Specifics">found in our FAQ</a>.</p>
+<a href="https://help.nexmo.com/hc/en-us/sections/200622473-Country-Specific-Features-and-Restrictions">found in our FAQ</a>.</p>
 <p>New accounts can only send to numbers that have been verified in the dashboard, and 'Nexmo Demo' will be added to all
 messages. Once you've added funds to your account, those restrictions will be removed.</p>
 <div class="code-snippets">
     <ul class="nav nav-tabs">
-                <li role="presentation" class="cURL55afbcf42b618 active"><a href="#cURL55afbcf42b618" aria-controls="cURL55afbcf42b618" role="tab" data-toggle="tab">cURL</a></li>
-                <li role="presentation" class="PHP55afbcf42b618"><a href="#PHP55afbcf42b618" aria-controls="PHP55afbcf42b618" role="tab" data-toggle="tab">PHP</a></li>
+                <li role="presentation" class="cURL566f07796205d active"><a href="#cURL566f07796205d" aria-controls="cURL566f07796205d" role="tab" data-toggle="tab">cURL</a></li>
+                <li role="presentation" class="PHP566f07796205d"><a href="#PHP566f07796205d" aria-controls="PHP566f07796205d" role="tab" data-toggle="tab">PHP</a></li>
             </ul>
     <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="cURL55afbcf42b618">
+                <div role="tabpanel" class="tab-pane active" id="cURL566f07796205d">
             <pre><code>#!/bin/bash
 curl 'https://rest.nexmo.com/sms/json' \
 -d api_key=API_KEY \
@@ -119,7 +119,7 @@ curl 'https://rest.nexmo.com/sms/json' \
 -d from=NEXMO_NUMBER
 </code></pre>
         </div>
-                <div role="tabpanel" class="tab-pane " id="PHP55afbcf42b618">
+                <div role="tabpanel" class="tab-pane " id="PHP566f07796205d">
             <pre><code>&lt;?php
 $url = 'https://rest.nexmo.com/sms/json?' . http_build_query([
         'api_key' =&gt; API_KEY,
@@ -140,7 +140,7 @@ $response = curl_exec($ch);</code></pre>
 network was used, as well as the cost and your account's balance. Check out our API docs for more information on the
 response.</p>
 <p>If the status is <code>0</code>, check your phone. You've just sent your first SMS message using Nexmo.</p>
-<p>Check out the <a href="https://docs.nexmo.com/index.php/sms-api/send-message">API documentation</a> for more on sending SMS messages.</p>
+<p>Check out the <a href="https://docs.nexmo.com/api-ref/sms-api">API documentation</a> for more on sending SMS messages.</p>
 </div>
         </div>
         <div class="row next">

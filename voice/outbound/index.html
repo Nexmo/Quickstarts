@@ -98,11 +98,11 @@ document.</p>
 <p>Send the request to <code>https://rest.nexmo.com/call/json</code> (or <code>xml</code> if that's your preference).</p>
 <div class="code-snippets">
     <ul class="nav nav-tabs">
-                <li role="presentation" class="cURL55afbcf50147b active"><a href="#cURL55afbcf50147b" aria-controls="cURL55afbcf50147b" role="tab" data-toggle="tab">cURL</a></li>
-                <li role="presentation" class="PHP55afbcf50147b"><a href="#PHP55afbcf50147b" aria-controls="PHP55afbcf50147b" role="tab" data-toggle="tab">PHP</a></li>
+                <li role="presentation" class="cURL566f077a18874 active"><a href="#cURL566f077a18874" aria-controls="cURL566f077a18874" role="tab" data-toggle="tab">cURL</a></li>
+                <li role="presentation" class="PHP566f077a18874"><a href="#PHP566f077a18874" aria-controls="PHP566f077a18874" role="tab" data-toggle="tab">PHP</a></li>
             </ul>
     <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="cURL55afbcf50147b">
+                <div role="tabpanel" class="tab-pane active" id="cURL566f077a18874">
             <pre><code>#!/bin/bash
 curl 'https://rest.nexmo.com/call/json' \
 -d api_key=API_KEY \
@@ -111,7 +111,7 @@ curl 'https://rest.nexmo.com/call/json' \
 --data-urlencode &quot;answer_url=http://example.com/outbound.vxml&quot; \
 -d from=NEXMO_NUMBER</code></pre>
         </div>
-                <div role="tabpanel" class="tab-pane " id="PHP55afbcf50147b">
+                <div role="tabpanel" class="tab-pane " id="PHP566f077a18874">
             <pre><code>&lt;?php
 $url = 'https://rest.nexmo.com/call/json?' . http_build_query(array(
         'api_key' =&gt; API_KEY,
@@ -134,10 +134,10 @@ $response = curl_exec($ch);</code></pre>
 For each callback URL the desired HTTP method may be defined with a matching <code>_method</code> parameter.</p>
 <div class="code-snippets">
     <ul class="nav nav-tabs">
-                <li role="presentation" class="PHP55afbcf501a6e active"><a href="#PHP55afbcf501a6e" aria-controls="PHP55afbcf501a6e" role="tab" data-toggle="tab">PHP</a></li>
+                <li role="presentation" class="PHP566f077a18d4e active"><a href="#PHP566f077a18d4e" aria-controls="PHP566f077a18d4e" role="tab" data-toggle="tab">PHP</a></li>
             </ul>
     <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="PHP55afbcf501a6e">
+                <div role="tabpanel" class="tab-pane active" id="PHP566f077a18d4e">
             <pre><code>&lt;?php
 $request = array_merge($_GET, $_POST);
 error_log('call id: ' . $request['call-id']);
@@ -147,7 +147,7 @@ error_log('call ended at: ' . $request['call-end']);</code></pre>
         </div>
             </div>
 </div>
-<p>Find a complete list of status parameters in the <a href="https://docs.nexmo.com/index.php/voice-api/call">API documentation</a>. And take a look at the
+<p>Find a complete list of status parameters in the <a href="https://docs.nexmo.com/api-ref/voice-api/call">API documentation</a>. And take a look at the
 <a href="./../inbound/">Inbound Call Quickstart</a> for a brief introduction to Voice XML.</p>
 </div>
         </div>

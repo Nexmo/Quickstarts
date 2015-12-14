@@ -91,21 +91,21 @@ completed.</p>
 Pass that along with your <code>api_key</code> and <code>api_secret</code> to <code>https://api.nexmo.com/verify/search/json</code> (or <code>/xml</code>).</p>
 <div class="code-snippets">
     <ul class="nav nav-tabs">
-                <li role="presentation" class="cURL55afbcf69c24c active"><a href="#cURL55afbcf69c24c" aria-controls="cURL55afbcf69c24c" role="tab" data-toggle="tab">cURL</a></li>
-                <li role="presentation" class="PHP55afbcf69c24c"><a href="#PHP55afbcf69c24c" aria-controls="PHP55afbcf69c24c" role="tab" data-toggle="tab">PHP</a></li>
-                <li role="presentation" class="Python55afbcf69c24c"><a href="#Python55afbcf69c24c" aria-controls="Python55afbcf69c24c" role="tab" data-toggle="tab">Python</a></li>
-                <li role="presentation" class="Ruby55afbcf69c24c"><a href="#Ruby55afbcf69c24c" aria-controls="Ruby55afbcf69c24c" role="tab" data-toggle="tab">Ruby</a></li>
-                <li role="presentation" class="NodeJS55afbcf69c24c"><a href="#NodeJS55afbcf69c24c" aria-controls="NodeJS55afbcf69c24c" role="tab" data-toggle="tab">NodeJS</a></li>
+                <li role="presentation" class="cURL566f077b726b3 active"><a href="#cURL566f077b726b3" aria-controls="cURL566f077b726b3" role="tab" data-toggle="tab">cURL</a></li>
+                <li role="presentation" class="PHP566f077b726b3"><a href="#PHP566f077b726b3" aria-controls="PHP566f077b726b3" role="tab" data-toggle="tab">PHP</a></li>
+                <li role="presentation" class="Python566f077b726b3"><a href="#Python566f077b726b3" aria-controls="Python566f077b726b3" role="tab" data-toggle="tab">Python</a></li>
+                <li role="presentation" class="Ruby566f077b726b3"><a href="#Ruby566f077b726b3" aria-controls="Ruby566f077b726b3" role="tab" data-toggle="tab">Ruby</a></li>
+                <li role="presentation" class="NodeJS566f077b726b3"><a href="#NodeJS566f077b726b3" aria-controls="NodeJS566f077b726b3" role="tab" data-toggle="tab">NodeJS</a></li>
             </ul>
     <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="cURL55afbcf69c24c">
+                <div role="tabpanel" class="tab-pane active" id="cURL566f077b726b3">
             <pre><code>#!/bin/bash
 curl 'https://api.nexmo.com/verify/search/json' \
 -d api_key=API_KEY \
 -d api_secret=API_SECRET \
 -d request_id=a7d922f6a00442ee8e2f2a7646cb2a6d</code></pre>
         </div>
-                <div role="tabpanel" class="tab-pane " id="PHP55afbcf69c24c">
+                <div role="tabpanel" class="tab-pane " id="PHP566f077b726b3">
             <pre><code>&lt;?php
 $url = 'https://api.nexmo.com/verify/search/json?' . http_build_query([
         'api_key' =&gt; API_KEY,
@@ -118,7 +118,7 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $response = curl_exec($ch);
 error_log($response);</code></pre>
         </div>
-                <div role="tabpanel" class="tab-pane " id="Python55afbcf69c24c">
+                <div role="tabpanel" class="tab-pane " id="Python566f077b726b3">
             <pre><code>import urllib
 
 params = {
@@ -132,7 +132,7 @@ url = 'https://api.nexmo.com/verify/search/json?' + urllib.urlencode(params)
 response = urllib.urlopen(url)
 print response.read()</code></pre>
         </div>
-                <div role="tabpanel" class="tab-pane " id="Ruby55afbcf69c24c">
+                <div role="tabpanel" class="tab-pane " id="Ruby566f077b726b3">
             <pre><code>require &quot;net/http&quot;
 require &quot;uri&quot;
 
@@ -148,7 +148,7 @@ response = Net::HTTP.post_form(uri, params)
 
 puts response.body</code></pre>
         </div>
-                <div role="tabpanel" class="tab-pane " id="NodeJS55afbcf69c24c">
+                <div role="tabpanel" class="tab-pane " id="NodeJS566f077b726b3">
             <pre><code>var https = require('https');
 
 var data = JSON.stringify({
@@ -189,7 +189,7 @@ req.on('response', function(res){
 <p>Not only will the response include the current status of the process, but will also include information about the last
 time a code was sent, what codes have been checked, and the outcome of those checks.</p>
 <p>It's also possible to check multiple verifications by using the <code>request_ids</code> parameter instead of <code>request_id</code>.</p>
-<p>Find example responses, and a full list of parameters in the <a href="https://docs.nexmo.com/index.php/verify/control">API documentation</a>.</p>
+<p>Find example responses, and a full list of parameters in the <a href="https://docs.nexmo.com/api-ref/verify/control">API documentation</a>.</p>
 </div>
         </div>
         <div class="row next">
