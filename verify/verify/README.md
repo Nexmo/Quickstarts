@@ -32,7 +32,7 @@ carrier.
 Once you have the `code` send that and the `request_id` from the initial API request to: 
 `https://api.nexmo.com/verify/json` (or `/xml`) with your `api_key` and `api_secret`.
 
-Example: [cURL](./curl/check.sh) [PHP](./php/check.php) [Python](./python/check.py) [Ruby](./ruby/send.rb) [NodeJS](./node/check.js)
+Example: [cURL](./curl/check.sh) [PHP](./php/check.php) [Python](./python/check.py) [Ruby](./ruby/check.rb) [NodeJS](./node/check.js)
 
 Again the `status` will be `0` if the code is correct, and the verification process successful. If not you can retry 
 until the process times out, or you reach the maximum number of attempts.

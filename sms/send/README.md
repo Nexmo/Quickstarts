@@ -24,7 +24,7 @@ number that's part of your account. Carrier and country specific restrictions on
 New accounts can only send to numbers that have been verified in the dashboard, and 'Nexmo Demo' will be added to all 
 messages. Once you've added funds to your account, those restrictions will be removed.
 
-Example: [cURL][curl] [PHP](./php/send.php)
+Example: [cURL](./curl/send.sh) [PHP](./php/send.php) [Python](./python/send.py) [Ruby](./ruby/send.rb) [NodeJS](./node/send.js)
 
 Now that the parameters are set, fire off the request. 
 
@@ -38,4 +38,3 @@ Check out the [API documentation][2] for more on sending SMS messages.
 
 [1]: https://help.nexmo.com/hc/en-us/sections/200622473-Country-Specific-Features-and-Restrictions
 [2]: https://docs.nexmo.com/api-ref/sms-api
-[curl]: ./curl/send.sh

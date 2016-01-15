@@ -14,7 +14,7 @@ To:
 
 The `to`, `from`, and `text` parameters stay the same.
 
-Example: [cURL](./curl/tts.sh) [PHP](./php/tts.php)
+Example: [cURL](./curl/tts.sh) [PHP](./php/tts.php) [Python](./python/tts.py) [Ruby](./ruby/tts.rb) [NodeJS](./node/tts.js)
 
 Once that's done, instead of your message being sent as an SMS, the phone number will be called, and your messages will 
 be read by our text to speech engine. If you set a callback when making the request, that URL will be sent the call data 
