@@ -97,11 +97,14 @@
 <p>The <code>to</code>, <code>from</code>, and <code>text</code> parameters stay the same.</p>
 <div class="code-snippets">
     <ul class="nav nav-tabs">
-                <li role="presentation" class="cURL566f0779d489a active"><a href="#cURL566f0779d489a" aria-controls="cURL566f0779d489a" role="tab" data-toggle="tab">cURL</a></li>
-                <li role="presentation" class="PHP566f0779d489a"><a href="#PHP566f0779d489a" aria-controls="PHP566f0779d489a" role="tab" data-toggle="tab">PHP</a></li>
+                <li role="presentation" class="cURL56990f4e6cd59 active"><a href="#cURL56990f4e6cd59" aria-controls="cURL56990f4e6cd59" role="tab" data-toggle="tab">cURL</a></li>
+                <li role="presentation" class="PHP56990f4e6cd59"><a href="#PHP56990f4e6cd59" aria-controls="PHP56990f4e6cd59" role="tab" data-toggle="tab">PHP</a></li>
+                <li role="presentation" class="Python56990f4e6cd59"><a href="#Python56990f4e6cd59" aria-controls="Python56990f4e6cd59" role="tab" data-toggle="tab">Python</a></li>
+                <li role="presentation" class="Ruby56990f4e6cd59"><a href="#Ruby56990f4e6cd59" aria-controls="Ruby56990f4e6cd59" role="tab" data-toggle="tab">Ruby</a></li>
+                <li role="presentation" class="NodeJS56990f4e6cd59"><a href="#NodeJS56990f4e6cd59" aria-controls="NodeJS56990f4e6cd59" role="tab" data-toggle="tab">NodeJS</a></li>
             </ul>
     <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="cURL566f0779d489a">
+                <div role="tabpanel" class="tab-pane active" id="cURL56990f4e6cd59">
             <pre><code>#!/bin/bash
 curl 'https://api.nexmo.com/tts/json' \
 -d api_key=API_KEY \
@@ -111,7 +114,7 @@ curl 'https://api.nexmo.com/tts/json' \
 -d from=NEXMO_NUMBER
 </code></pre>
         </div>
-                <div role="tabpanel" class="tab-pane " id="PHP566f0779d489a">
+                <div role="tabpanel" class="tab-pane " id="PHP56990f4e6cd59">
             <pre><code>&lt;?php
 $params = [
     'api_key' =&gt; API_KEY,
@@ -126,6 +129,78 @@ $url = 'https://api.nexmo.com/tts/json?' . http_build_query($params);
 $ch = curl_init($url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $response = curl_exec($ch);</code></pre>
+        </div>
+                <div role="tabpanel" class="tab-pane " id="Python56990f4e6cd59">
+            <pre><code>import urllib
+
+params = {
+    'api_key': API_KEY,
+    'api_secret': API_SECRET,
+    'to': YOUR_NUMBER,
+    'from': NEXMO_NUMBER,
+    'text': 'Hello from Nexmo'
+}
+
+url = 'https://api.nexmo.com/tts/json?' + urllib.urlencode(params)
+
+response = urllib.urlopen(url)
+print response.read()
+</code></pre>
+        </div>
+                <div role="tabpanel" class="tab-pane " id="Ruby56990f4e6cd59">
+            <pre><code>require &quot;net/http&quot;
+require &quot;uri&quot;
+
+uri = URI.parse(&quot;https://api.nexmo.com/tts/json&quot;)
+params = {
+    &quot;api_key&quot; =&gt; API_KEY,
+    &quot;api_secret&quot; =&gt; API_SECRET,
+    &quot;to&quot; =&gt; YOUR_NUMBER,
+    &quot;from&quot; =&gt; NEXMO_NUMBER,
+    &quot;text&quot; =&gt; &quot;Hello from Nexmo&quot;
+}
+
+response = Net::HTTP.post_form(uri, params)
+
+puts response.body</code></pre>
+        </div>
+                <div role="tabpanel" class="tab-pane " id="NodeJS56990f4e6cd59">
+            <pre><code>var https = require('https');
+
+var data = JSON.stringify({
+  api_key: API_KEY,
+  api_secret: API_SECRET,
+  to: YOUR_NUMBER,
+  from: NEXMO_NUMBER,
+  text: 'Hello from Nexmo'
+});
+
+var options = {
+  host: 'api.nexmo.com',
+  path: '/tts/json',
+  port: 443,
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'Content-Length': Buffer.byteLength(data)
+  }
+};
+
+var req = https.request(options);
+
+req.write(data);
+req.end();
+
+var responseData = '';
+req.on('response', function(res){
+  res.on('data', function(chunk){
+    responseData += chunk;
+  });
+  
+  res.on('end', function(){
+    console.log(JSON.parse(responseData));
+  });
+});</code></pre>
         </div>
             </div>
 </div>

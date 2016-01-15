@@ -91,11 +91,11 @@ subset of information, you can send a comma separated list of <a href="https://d
 <p>The response (JSON or XML) will contain pricing information, the status (<code>0</code> for success), and the <code>request_id</code>.</p>
 <div class="code-snippets">
     <ul class="nav nav-tabs">
-                <li role="presentation" class="cURL566f077b8d88a active"><a href="#cURL566f077b8d88a" aria-controls="cURL566f077b8d88a" role="tab" data-toggle="tab">cURL</a></li>
-                <li role="presentation" class="PHP566f077b8d88a"><a href="#PHP566f077b8d88a" aria-controls="PHP566f077b8d88a" role="tab" data-toggle="tab">PHP</a></li>
+                <li role="presentation" class="cURL56990f502381b active"><a href="#cURL56990f502381b" aria-controls="cURL56990f502381b" role="tab" data-toggle="tab">cURL</a></li>
+                <li role="presentation" class="PHP56990f502381b"><a href="#PHP56990f502381b" aria-controls="PHP56990f502381b" role="tab" data-toggle="tab">PHP</a></li>
             </ul>
     <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="cURL566f077b8d88a">
+                <div role="tabpanel" class="tab-pane active" id="cURL56990f502381b">
             <pre><code>#!/bin/bash
 curl 'https://rest.nexmo.com/ni/json' \
 -d api_key=$API_KEY \
@@ -104,7 +104,7 @@ curl 'https://rest.nexmo.com/ni/json' \
 -d callback=$YOUR_CALLBACK
 </code></pre>
         </div>
-                <div role="tabpanel" class="tab-pane " id="PHP566f077b8d88a">
+                <div role="tabpanel" class="tab-pane " id="PHP56990f502381b">
             <pre><code>&lt;?php
 $url = 'https://rest.nexmo.com/ni/json?' . http_build_query([
         'api_key' =&gt; API_KEY,
@@ -127,10 +127,10 @@ enough for most cases.</p>
 <p>All that's left is to parse the callback data - by default it'll be in the query string.</p>
 <div class="code-snippets">
     <ul class="nav nav-tabs">
-                <li role="presentation" class="PHP566f077b8ddd8 active"><a href="#PHP566f077b8ddd8" aria-controls="PHP566f077b8ddd8" role="tab" data-toggle="tab">PHP</a></li>
+                <li role="presentation" class="PHP56990f5023d22 active"><a href="#PHP56990f5023d22" aria-controls="PHP56990f5023d22" role="tab" data-toggle="tab">PHP</a></li>
             </ul>
     <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="PHP566f077b8ddd8">
+                <div role="tabpanel" class="tab-pane active" id="PHP56990f5023d22">
             <pre><code>&lt;?php
 if(!isset($_GET['request_id'])){
     return; //doesn't look like a number insight callback

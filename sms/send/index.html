@@ -105,11 +105,14 @@ number that's part of your account. Carrier and country specific restrictions on
 messages. Once you've added funds to your account, those restrictions will be removed.</p>
 <div class="code-snippets">
     <ul class="nav nav-tabs">
-                <li role="presentation" class="cURL566f07796205d active"><a href="#cURL566f07796205d" aria-controls="cURL566f07796205d" role="tab" data-toggle="tab">cURL</a></li>
-                <li role="presentation" class="PHP566f07796205d"><a href="#PHP566f07796205d" aria-controls="PHP566f07796205d" role="tab" data-toggle="tab">PHP</a></li>
+                <li role="presentation" class="cURL56990f4df1d74 active"><a href="#cURL56990f4df1d74" aria-controls="cURL56990f4df1d74" role="tab" data-toggle="tab">cURL</a></li>
+                <li role="presentation" class="PHP56990f4df1d74"><a href="#PHP56990f4df1d74" aria-controls="PHP56990f4df1d74" role="tab" data-toggle="tab">PHP</a></li>
+                <li role="presentation" class="Python56990f4df1d74"><a href="#Python56990f4df1d74" aria-controls="Python56990f4df1d74" role="tab" data-toggle="tab">Python</a></li>
+                <li role="presentation" class="Ruby56990f4df1d74"><a href="#Ruby56990f4df1d74" aria-controls="Ruby56990f4df1d74" role="tab" data-toggle="tab">Ruby</a></li>
+                <li role="presentation" class="NodeJS56990f4df1d74"><a href="#NodeJS56990f4df1d74" aria-controls="NodeJS56990f4df1d74" role="tab" data-toggle="tab">NodeJS</a></li>
             </ul>
     <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="cURL566f07796205d">
+                <div role="tabpanel" class="tab-pane active" id="cURL56990f4df1d74">
             <pre><code>#!/bin/bash
 curl 'https://rest.nexmo.com/sms/json' \
 -d api_key=API_KEY \
@@ -119,7 +122,7 @@ curl 'https://rest.nexmo.com/sms/json' \
 -d from=NEXMO_NUMBER
 </code></pre>
         </div>
-                <div role="tabpanel" class="tab-pane " id="PHP566f07796205d">
+                <div role="tabpanel" class="tab-pane " id="PHP56990f4df1d74">
             <pre><code>&lt;?php
 $url = 'https://rest.nexmo.com/sms/json?' . http_build_query([
         'api_key' =&gt; API_KEY,
@@ -132,6 +135,78 @@ $url = 'https://rest.nexmo.com/sms/json?' . http_build_query([
 $ch = curl_init($url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $response = curl_exec($ch);</code></pre>
+        </div>
+                <div role="tabpanel" class="tab-pane " id="Python56990f4df1d74">
+            <pre><code>import urllib
+
+params = {
+    'api_key': API_KEY,
+    'api_secret': API_SECRET,
+    'to': YOUR_NUMBER,
+    'from': NEXMO_NUMBER,
+    'text': 'Hello from Nexmo'
+}
+
+url = 'https://rest.nexmo.com/sms/json?' + urllib.urlencode(params)
+
+response = urllib.urlopen(url)
+print response.read()
+</code></pre>
+        </div>
+                <div role="tabpanel" class="tab-pane " id="Ruby56990f4df1d74">
+            <pre><code>require &quot;net/http&quot;
+require &quot;uri&quot;
+
+uri = URI.parse(&quot;https://rest.nexmo.com/sms/json&quot;)
+params = {
+    &quot;api_key&quot; =&gt; API_KEY,
+    &quot;api_secret&quot; =&gt; API_SECRET,
+    &quot;to&quot; =&gt; YOUR_NUMBER,
+    &quot;from&quot; =&gt; NEXMO_NUMBER,
+    &quot;text&quot; =&gt; &quot;Hello from Nexmo&quot;
+}
+
+response = Net::HTTP.post_form(uri, params)
+
+puts response.body</code></pre>
+        </div>
+                <div role="tabpanel" class="tab-pane " id="NodeJS56990f4df1d74">
+            <pre><code>var https = require('https');
+
+var data = JSON.stringify({
+  api_key: API_KEY,
+  api_secret: API_SECRET,
+  to: YOUR_NUMBER,
+  from: NEXMO_NUMBER,
+  text: 'Hello from Nexmo'
+});
+
+var options = {
+  host: 'rest.nexmo.com',
+  path: '/sms/json',
+  port: 443,
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'Content-Length': Buffer.byteLength(data)
+  }
+};
+
+var req = https.request(options);
+
+req.write(data);
+req.end();
+
+var responseData = '';
+req.on('response', function(res){
+  res.on('data', function(chunk){
+    responseData += chunk;
+  });
+  
+  res.on('end', function(){
+    console.log(JSON.parse(responseData));
+  });
+});</code></pre>
         </div>
             </div>
 </div>
